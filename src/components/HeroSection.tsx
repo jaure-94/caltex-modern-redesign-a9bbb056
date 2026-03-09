@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin } from "lucide-react";
 import gsap from "gsap";
 import { useSiteStore } from "@/store/siteStore";
-import heroImage from "@/assets/hero-night.jpg";
+import heroImage from "@/assets/caltex-fuel-station-4.jpg";
 
 const heroWords = ["Journey", "Engine", "Business", "Family"];
 

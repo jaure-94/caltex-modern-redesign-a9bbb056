@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import gsap from "gsap";
 import { useSiteStore } from "@/store/siteStore";
-import caltexLogo from "@/assets/caltex-logo.png";
+import caltexLogo from "@/assets/caltex-logo-2.svg";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -104,13 +104,11 @@ const Navbar = () => {
           {/* Logo */}
           <a ref={logoRef} href="#home" onClick={(e) => handleNavClick(e, "#home")} className="flex items-center gap-3 group opacity-0">
             <div className="relative">
-              <img src={caltexLogo} alt="Caltex" className="h-10 w-10 transition-transform duration-500 group-hover:rotate-[20deg] group-hover:scale-110" />
+              <img src={caltexLogo} alt="Caltex" className="h-28 w-28 transition-transform duration-500 group-hover:scale-110" />
             </div>
             <span className={`font-display text-xl font-bold tracking-tight transition-colors duration-300 ${
               isNavScrolled ? "text-secondary" : "text-primary-foreground"
-            }`}>
-              CALTEX
-            </span>
+            }`}></span>
           </a>
 
           {/* Desktop Nav Links */}
