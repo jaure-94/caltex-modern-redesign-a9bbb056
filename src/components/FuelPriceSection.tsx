@@ -48,8 +48,8 @@ const FuelPriceSection = () => {
               <div className="text-sm text-primary-foreground/40 mb-3">{fuel.unit}</div>
               <div className="text-sm text-primary-foreground/70 leading-snug">{fuel.name}</div>
               <div className="mt-3 inline-flex items-center gap-1 text-xs">
-                {fuel.trend === "down" ? (
-                  <><TrendingDown size={12} className="text-green-400" /><span className="text-green-400">Lower</span></>
+              {fuel.trend === "down" ? (
+                  <><TrendingDown size={12} className="text-emerald-400" /><span className="text-emerald-400">Lower</span></>
                 ) : (
                   <><TrendingUp size={12} className="text-caltex-gold" /><span className="text-caltex-gold">Higher</span></>
                 )}
