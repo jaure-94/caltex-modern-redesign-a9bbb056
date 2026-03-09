@@ -1,9 +1,10 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Building2 } from "lucide-react";
+import { ArrowRight, Building2, TrendingUp, Users, Shield } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import businessImg from "@/assets/business.jpg";
+import freshstopImg from "@/assets/freshstop-modern.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,29 +13,66 @@ const CTASection = () => {
 
   useEffect(() => {
     if (!sectionRef.current) return;
-    const els = sectionRef.current.querySelectorAll(".cta-animate");
-    gsap.fromTo(els,
-      { opacity: 0, y: 30 },
-      {
-        opacity: 1, y: 0, duration: 0.7, stagger: 0.12, ease: "power3.out",
-        scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
-      }
-    );
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(".cta-content > *",
+        { opacity: 0, y: 35 },
+        {
+          opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "power3.out",
+          scrollTrigger: { trigger: ".cta-content", start: "top 80%" },
+        }
+      );
+
+      gsap.fromTo(".cta-cards .cta-card",
+        { opacity: 0, x: 40 },
+        {
+          opacity: 1, x: 0, duration: 0.7, stagger: 0.15, ease: "power3.out",
+          scrollTrigger: { trigger: ".cta-cards", start: "top 80%" },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={sectionRef} id="business" className="py-24 md:py-32 bg-muted/50">
-      <div className="section-padding">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <span className="cta-animate text-sm font-semibold tracking-widest uppercase text-primary mb-3 block">Business Opportunities</span>
-            <h2 className="cta-animate font-display text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-              A Caltex Franchise Awaits You
+    <section ref={sectionRef} id="business" className="py-28 md:py-36 bg-muted/40 relative overflow-hidden">
+      <div className="section-padding section-max">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left - Content */}
+          <div className="cta-content">
+            <span className="section-label mb-5 inline-block">Business Opportunities</span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              A Caltex Franchise{" "}
+              <span className="text-gradient-red">Awaits You</span>
             </h2>
-            <p className="cta-animate text-muted-foreground text-lg leading-relaxed mb-8">
-              Caltex has several exciting franchise opportunities available across South Africa. Join a trusted brand with over 50 years of excellence in the fuel industry.
+            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+              Join one of South Africa's most trusted fuel brands. Caltex offers exciting franchise opportunities with comprehensive support, training, and a proven business model that delivers results.
             </p>
-            <div className="cta-animate flex flex-wrap gap-4">
+
+            {/* Benefit cards */}
+            <div className="space-y-4 mb-10">
+              {[
+                { icon: TrendingUp, title: "Proven Business Model", desc: "87 years of success in the SA market" },
+                { icon: Users, title: "Full Training & Support", desc: "Comprehensive onboarding and ongoing assistance" },
+                { icon: Shield, title: "Trusted Brand", desc: "One of Africa's most recognized fuel brands" },
+              ].map((benefit) => {
+                const Icon = benefit.icon;
+                return (
+                  <div key={benefit.title} className="flex gap-4 items-start p-4 rounded-xl hover:bg-card transition-colors">
+                    <div className="w-10 h-10 rounded-lg bg-primary/8 flex items-center justify-center flex-shrink-0">
+                      <Icon size={18} className="text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-display font-semibold text-foreground text-sm">{benefit.title}</h4>
+                      <p className="text-muted-foreground text-sm">{benefit.desc}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="flex flex-wrap gap-4">
               <Button variant="hero" size="lg">
                 Explore Franchise <Building2 size={18} />
               </Button>
@@ -43,9 +81,20 @@ const CTASection = () => {
               </Button>
             </div>
           </div>
-          <div className="cta-animate relative rounded-3xl overflow-hidden shadow-card">
-            <img src={businessImg} alt="Business partnership" className="w-full h-[400px] object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-caltex-dark/40 to-transparent" />
+
+          {/* Right - Image stack */}
+          <div className="cta-cards relative">
+            <div className="cta-card rounded-3xl overflow-hidden shadow-card mb-5">
+              <img src={businessImg} alt="Caltex Business Partnership" className="w-full h-[280px] object-cover" />
+            </div>
+            <div className="cta-card rounded-3xl overflow-hidden shadow-card">
+              <img src={freshstopImg} alt="FreshStop Convenience" className="w-full h-[200px] object-cover" />
+            </div>
+            {/* Floating stat */}
+            <div className="absolute -left-4 top-1/2 -translate-y-1/2 bg-card rounded-2xl p-5 shadow-lg border border-border/50 hidden md:block">
+              <div className="text-3xl font-display font-bold text-primary">97%</div>
+              <div className="text-xs text-muted-foreground mt-1">Franchisee<br />Satisfaction</div>
+            </div>
           </div>
         </div>
       </div>
