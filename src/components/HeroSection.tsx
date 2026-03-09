@@ -164,7 +164,7 @@ const HeroSection = () => {
           {/* CTA Buttons */}
           <div ref={ctaRef} className="opacity-0 flex flex-wrap gap-4">
             <Button variant="hero" size="xl">
-              Find a Station <MapPin size={18} />
+              Find a Caltex Station <MapPin size={18} />
             </Button>
             <Button variant="heroOutline" size="xl">
               Explore Techron® <ArrowRight size={18} />
