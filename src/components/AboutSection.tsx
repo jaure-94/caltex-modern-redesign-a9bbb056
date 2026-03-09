@@ -1,76 +1,142 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Play } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import stationAerial from "@/assets/station-aerial.jpg";
-import fuelPump from "@/assets/fuel-pump.jpg";
+import stationAerial from "@/assets/sa-highway.jpg";
+import familyStation from "@/assets/family-station.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const stats = [
+  { value: 800, suffix: "+", label: "Stations Nationwide" },
+  { value: 87, suffix: "yrs", label: "Years of Trust" },
+  { value: 10, suffix: "k+", label: "Satisfied Motorists" },
+];
+
 const AboutSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const [counters, setCounters] = useState(stats.map(() => 0));
+  const countersStarted = useRef(false);
 
   useEffect(() => {
     if (!sectionRef.current) return;
-    const elements = sectionRef.current.querySelectorAll(".about-animate");
-    gsap.fromTo(elements,
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1, y: 0, duration: 0.7, stagger: 0.15, ease: "power3.out",
-        scrollTrigger: { trigger: sectionRef.current, start: "top 75%" },
-      }
-    );
+
+    const ctx = gsap.context(() => {
+      // Left side images
+      gsap.fromTo(".about-images",
+        { opacity: 0, x: -60 },
+        {
+          opacity: 1, x: 0, duration: 1, ease: "power3.out",
+          scrollTrigger: { trigger: ".about-images", start: "top 80%" },
+        }
+      );
+
+      // Right side content
+      gsap.fromTo(".about-content > *",
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "power3.out",
+          scrollTrigger: { trigger: ".about-content", start: "top 80%" },
+        }
+      );
+
+      // Counter animation
+      ScrollTrigger.create({
+        trigger: ".about-stats",
+        start: "top 85%",
+        once: true,
+        onEnter: () => {
+          if (countersStarted.current) return;
+          countersStarted.current = true;
+          stats.forEach((stat, i) => {
+            const obj = { val: 0 };
+            gsap.to(obj, {
+              val: stat.value,
+              duration: 2,
+              ease: "power2.out",
+              onUpdate: () => {
+                setCounters((prev) => {
+                  const next = [...prev];
+                  next[i] = Math.round(obj.val);
+                  return next;
+                });
+              },
+            });
+          });
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="py-24 md:py-32">
-      <div className="section-padding">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Images */}
-          <div className="about-animate relative">
+    <section ref={sectionRef} id="about" className="py-28 md:py-36 bg-background relative overflow-hidden">
+      <div className="section-padding section-max">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+          {/* Left - Images */}
+          <div className="about-images relative">
+            {/* Main image */}
             <div className="relative rounded-3xl overflow-hidden shadow-card">
-              <img src={stationAerial} alt="Caltex Station" className="w-full h-[400px] object-cover" />
+              <img src={stationAerial} alt="South African Highway" className="w-full h-[450px] object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-caltex-dark/20 to-transparent" />
             </div>
-            <div className="absolute -bottom-8 -right-4 md:right-8 w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden shadow-lg border-4 border-background">
-              <img src={fuelPump} alt="Fuel Pump" className="w-full h-full object-cover" />
+            
+            {/* Floating card */}
+            <div className="absolute -bottom-6 -right-3 md:right-6 w-52 h-52 md:w-60 md:h-60 rounded-2xl overflow-hidden shadow-lg border-[5px] border-background">
+              <img src={familyStation} alt="Happy motorists" className="w-full h-full object-cover" />
             </div>
+
+            {/* Play button decoration */}
+            <div className="absolute top-6 right-6 w-14 h-14 rounded-full bg-primary/90 backdrop-blur-sm flex items-center justify-center cursor-pointer hover:scale-110 transition-transform shadow-red-glow">
+              <Play size={20} className="text-primary-foreground ml-1" fill="currentColor" />
+            </div>
+
+            {/* Dot grid decoration */}
+            <div className="absolute -left-4 -top-4 w-24 h-24 dot-pattern rounded-2xl -z-10" />
           </div>
 
-          {/* Content */}
-          <div className="about-animate pt-8">
-            <span className="text-sm font-semibold tracking-widest uppercase text-primary mb-3 block">Why Choose Us</span>
+          {/* Right - Content */}
+          <div className="about-content">
+            <span className="section-label mb-5 inline-block">Why Choose Caltex</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-              Our Exceptional Flair Sets Us Apart
+              Trusted by Millions of{" "}
+              <span className="text-gradient-red">South African Motorists</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              From research to the real world, we bring you Techron®, a cleaning additive in all grades of Caltex fuel that's trusted by motorists, mechanics, and manufacturers around the world.
+              For over 87 years, Caltex has been powering South Africa's journeys. Our commitment to quality fuel, clean stations, and innovative technology makes us the choice of discerning motorists nationwide.
             </p>
 
+            {/* Checklist */}
             <div className="space-y-4 mb-10">
-              {["24/7 Emergency Callout", "Fully Qualified & Insured", "Techron® Clean Engine Technology", "Nationwide Station Network"].map((item) => (
-                <div key={item} className="flex items-center gap-3">
-                  <CheckCircle2 size={20} className="text-primary flex-shrink-0" />
-                  <span className="text-foreground font-medium">{item}</span>
+              {[
+                "Techron® Clean Engine Technology in every grade",
+                "800+ stations across South Africa",
+                "FreshStop convenience stores open 24/7",
+                "Tap & Go contactless payment nationwide",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <CheckCircle2 size={20} className="text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground font-medium text-[15px]">{item}</span>
                 </div>
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-6 mb-10">
-              {[
-                { value: "1.3k+", label: "Boilers Installed" },
-                { value: "640+", label: "Faucets Fixed" },
-                { value: "10k", label: "Satisfaction Guarantee" },
-              ].map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <div className="text-3xl font-display font-bold text-primary">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
+            {/* Animated Stats */}
+            <div className="about-stats flex gap-8 mb-10 pb-10 border-b border-border">
+              {stats.map((stat, i) => (
+                <div key={stat.label}>
+                  <div className="text-4xl font-display font-bold text-primary tracking-tight">
+                    {counters[i]}{stat.suffix}
+                  </div>
+                  <div className="text-sm text-muted-foreground mt-1.5 font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
 
             <Button variant="hero" size="lg">
-              Learn More <ArrowRight size={18} />
+              Learn More About Us <ArrowRight size={18} />
             </Button>
           </div>
         </div>
