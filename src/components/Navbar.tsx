@@ -132,7 +132,7 @@ const Navbar = () => {
               <a
                 key={item.label}
                 href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
+                onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
                 className={`nav-link opacity-0 relative px-4 py-2.5 text-[13px] font-medium transition-all duration-300 rounded-lg group ${
                   isNavScrolled
                     ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
