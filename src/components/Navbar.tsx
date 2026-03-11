@@ -8,7 +8,7 @@ import caltexLogo from "@/assets/caltex-logo-2.svg";
 
 const navItems = [
   { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about", isRoute: true },
   { label: "Find a Station", href: "#find-station" },
   { label: "Motorists", href: "#motorists" },
   { label: "Business", href: "#business" },
