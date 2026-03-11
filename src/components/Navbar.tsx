@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { useSiteStore } from "@/store/siteStore";
 import caltexLogo from "@/assets/caltex-logo-2.svg";
 
-const navItems = [
+const navItems: { label: string; href: string; isRoute?: boolean }[] = [
   { label: "Home", href: "#home" },
   { label: "About", href: "/about", isRoute: true },
   { label: "Find a Station", href: "#find-station" },
