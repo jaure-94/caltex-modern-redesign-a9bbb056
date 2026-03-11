@@ -189,7 +189,7 @@ const Navbar = () => {
             <a
               key={item.label}
               href={item.href}
-              onClick={(e) => handleNavClick(e, item.href)}
+              onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
               className={`mobile-link block px-4 py-3.5 text-base font-medium rounded-xl transition-all duration-200 ${
                 isNavScrolled
                   ? "text-foreground hover:text-primary hover:bg-muted"
