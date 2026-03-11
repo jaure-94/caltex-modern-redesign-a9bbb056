@@ -88,12 +88,24 @@ const Navbar = () => {
     }
   }, [isMobileMenuOpen]);
 
-  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string, isRoute?: boolean) => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
+    if (isRoute) {
+      navigate(href);
+      return;
+    }
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+      return;
+    }
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, [setIsMobileMenuOpen]);
+  }, [setIsMobileMenuOpen, navigate, location.pathname]);
 
   return (
     <nav
