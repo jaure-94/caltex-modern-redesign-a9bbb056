@@ -18,6 +18,8 @@ const navItems: { label: string; href: string; isRoute?: boolean }[] = [
 
 const Navbar = () => {
   const { isNavScrolled, isMobileMenuOpen, setIsNavScrolled, toggleMobileMenu, setIsMobileMenuOpen } = useSiteStore();
+  const navigate = useNavigate();
+  const location = useLocation();
   const navRef = useRef<HTMLElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLAnchorElement>(null);
