@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowLeft, Star, Fuel, MapPin, Users, Shield, Award } from "lucide-react";
+import { ArrowRight, ArrowLeft, Star, Fuel, MapPin, Users, Shield, Award, Building2, Briefcase, Factory, UserCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
