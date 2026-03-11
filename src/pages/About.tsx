@@ -294,6 +294,80 @@ const About = () => {
         </div>
       </section>
 
+      {/* 5 Things to Know - South Africa Focus */}
+      <section className="py-28 md:py-36 bg-caltex-dark relative overflow-hidden">
+        {/* SA flag-inspired accent stripe */}
+        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[hsl(145,60%,35%)] via-[hsl(48,95%,55%)] to-[hsl(0,82%,48%)]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-caltex-dark via-caltex-navy/40 to-caltex-dark" />
+
+        <div className="relative z-10 section-padding section-max">
+          <div className="text-center mb-16">
+            <span className="section-label mb-5 inline-block">Proudly South African</span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6 leading-tight">
+              5 Things to Know About{" "}
+              <span className="text-gradient-red">Caltex South Africa</span>
+            </h2>
+            <p className="text-primary-foreground/50 text-lg max-w-2xl mx-auto">
+              Headquartered in Cape Town, we are proudly South African — powering the nation's journeys with quality, innovation, and community commitment.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              {
+                icon: UserCheck,
+                number: "1,500+",
+                title: "Dedicated Employees",
+                description: "Caltex employs over 1,500 people in South Africa, trained to help you find the right products to meet all your needs.",
+              },
+              {
+                icon: Building2,
+                number: "Cape Town",
+                title: "Our Home Base",
+                description: "We are headquartered in Cape Town and form part of the greater Africa-Pakistan-Middle East region.",
+              },
+              {
+                icon: Briefcase,
+                number: "4+",
+                title: "Business Units",
+                description: "Our business is divided into units such as products, lubricants, value chain optimisation, and manufacturing.",
+              },
+              {
+                icon: MapPin,
+                number: "800+",
+                title: "Stations Nationwide",
+                description: "There are over 800 Caltex service stations across South Africa, from the Western Cape to Limpopo.",
+              },
+              {
+                icon: Factory,
+                number: "87+",
+                title: "Years in SA",
+                description: "Since 1936, Caltex has been an integral part of South Africa's energy landscape, fuelling growth and opportunity.",
+              },
+            ].map((item, i) => (
+              <div
+                key={item.title}
+                className={`sa-fact-card group relative rounded-2xl border border-primary/10 bg-primary-foreground/[0.03] backdrop-blur-sm p-8 hover:border-primary/30 transition-all duration-500 ${i === 3 ? "lg:col-start-1 lg:col-end-2 md:col-span-1" : ""} ${i === 4 ? "lg:col-start-2 lg:col-end-3 md:col-span-1" : ""}`}
+              >
+                <div className="flex items-start gap-5">
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 border border-primary/15 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
+                    <item.icon size={24} className="text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-2xl font-display font-bold text-primary mb-1">{item.number}</div>
+                    <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">{item.title}</h3>
+                    <p className="text-primary-foreground/50 text-sm leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom SA flag stripe */}
+        <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[hsl(0,82%,48%)] via-[hsl(48,95%,55%)] to-[hsl(145,60%,35%)]" />
+      </section>
+
       {/* FreshStop & Convenience */}
       <section className="py-28 md:py-36 bg-muted relative overflow-hidden">
         <div className="section-padding section-max">
