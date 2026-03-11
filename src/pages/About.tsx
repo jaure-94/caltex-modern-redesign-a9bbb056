@@ -99,6 +99,15 @@ const About = () => {
         }
       );
 
+      // SA Facts cards
+      gsap.fromTo(".sa-fact-card",
+        { opacity: 0, y: 40, scale: 0.95 },
+        {
+          opacity: 1, y: 0, scale: 1, duration: 0.6, stagger: 0.1, ease: "power3.out",
+          scrollTrigger: { trigger: ".sa-fact-card", start: "top 85%" },
+        }
+      );
+
       // CTA section
       gsap.fromTo(".about-cta > *",
         { opacity: 0, y: 30 },
