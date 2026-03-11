@@ -1,13 +1,14 @@
 import { useEffect, useRef, useCallback } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import gsap from "gsap";
 import { useSiteStore } from "@/store/siteStore";
 import caltexLogo from "@/assets/caltex-logo-2.svg";
 
-const navItems = [
+const navItems: { label: string; href: string; isRoute?: boolean }[] = [
   { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about", isRoute: true },
   { label: "Find a Station", href: "#find-station" },
   { label: "Motorists", href: "#motorists" },
   { label: "Business", href: "#business" },
@@ -17,6 +18,8 @@ const navItems = [
 
 const Navbar = () => {
   const { isNavScrolled, isMobileMenuOpen, setIsNavScrolled, toggleMobileMenu, setIsMobileMenuOpen } = useSiteStore();
+  const navigate = useNavigate();
+  const location = useLocation();
   const navRef = useRef<HTMLElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLAnchorElement>(null);
@@ -85,12 +88,24 @@ const Navbar = () => {
     }
   }, [isMobileMenuOpen]);
 
-  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string, isRoute?: boolean) => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
+    if (isRoute) {
+      navigate(href);
+      return;
+    }
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+      return;
+    }
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, [setIsMobileMenuOpen]);
+  }, [setIsMobileMenuOpen, navigate, location.pathname]);
 
   return (
     <nav
@@ -117,7 +132,7 @@ const Navbar = () => {
               <a
                 key={item.label}
                 href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
+                onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
                 className={`nav-link opacity-0 relative px-4 py-2.5 text-[13px] font-medium transition-all duration-300 rounded-lg group ${
                   isNavScrolled
                     ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
@@ -174,7 +189,7 @@ const Navbar = () => {
             <a
               key={item.label}
               href={item.href}
-              onClick={(e) => handleNavClick(e, item.href)}
+              onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
               className={`mobile-link block px-4 py-3.5 text-base font-medium rounded-xl transition-all duration-200 ${
                 isNavScrolled
                   ? "text-foreground hover:text-primary hover:bg-muted"
