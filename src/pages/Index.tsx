@@ -7,6 +7,7 @@ import FuelPriceSection from "@/components/FuelPriceSection";
 import CTASection from "@/components/CTASection";
 import BlogSection from "@/components/BlogSection";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
       <CTASection />
       <BlogSection />
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };
