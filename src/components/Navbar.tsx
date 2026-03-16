@@ -131,21 +131,47 @@ const Navbar = () => {
 
           {/* Desktop Nav Links */}
           <div ref={navLinksRef} className="hidden lg:flex items-center gap-0.5">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
-                className={`nav-link opacity-0 relative px-4 py-2.5 text-[13px] font-medium transition-all duration-300 rounded-lg group ${
-                  isNavScrolled
-                    ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
-                    : "text-primary-foreground/75 hover:text-primary-foreground hover:bg-primary-foreground/10"
-                }`}
-              >
-                {item.label}
-                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-primary rounded-full transition-all duration-300 group-hover:w-2/3" />
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const hasMega = item.hasMega;
+              const megaCategories = hasMega === "motorists" ? motoristMenu : hasMega === "business" ? businessMenu : null;
+
+              return (
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => {
+                    if (hasMega) {
+                      if (megaTimeoutRef.current) clearTimeout(megaTimeoutRef.current);
+                      setOpenMega(hasMega);
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    if (hasMega) {
+                      megaTimeoutRef.current = setTimeout(() => setOpenMega(null), 150);
+                    }
+                  }}
+                >
+                  <a
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
+                    className={`nav-link opacity-0 relative px-4 py-2.5 text-[13px] font-medium transition-all duration-300 rounded-lg group flex items-center gap-1 ${
+                      isNavScrolled
+                        ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                        : "text-primary-foreground/75 hover:text-primary-foreground hover:bg-primary-foreground/10"
+                    }`}
+                  >
+                    {item.label}
+                    {hasMega && (
+                      <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${openMega === hasMega ? "rotate-180" : ""}`} />
+                    )}
+                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-primary rounded-full transition-all duration-300 group-hover:w-2/3" />
+                  </a>
+                  {megaCategories && (
+                    <NavMegaMenu categories={megaCategories} isOpen={openMega === hasMega} isScrolled={isNavScrolled} />
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* Desktop CTA */}
