@@ -1,10 +1,11 @@
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import gsap from "gsap";
 import { useSiteStore } from "@/store/siteStore";
 import caltexLogo from "@/assets/caltex-logo-2.svg";
+import { NavMegaMenu, motoristMenu, businessMenu } from "@/components/NavMegaMenu";
 
 const navItems: { label: string; href: string; isRoute?: boolean }[] = [
   { label: "Home", href: "#home" },
