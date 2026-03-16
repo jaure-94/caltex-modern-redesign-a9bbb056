@@ -214,20 +214,49 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div ref={mobileMenuRef} className="lg:hidden overflow-hidden" style={{ display: "none" }}>
         <div className={`section-padding pb-8 pt-4 space-y-1 ${isNavScrolled ? "" : "bg-secondary/95 backdrop-blur-xl"}`}>
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
-              className={`mobile-link block px-4 py-3.5 text-base font-medium rounded-xl transition-all duration-200 ${
-                isNavScrolled
-                  ? "text-foreground hover:text-primary hover:bg-muted"
-                  : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
-              }`}
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const megaCategories = item.hasMega === "motorists" ? motoristMenu : item.hasMega === "business" ? businessMenu : null;
+            return (
+              <div key={item.label}>
+                <a
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
+                  className={`mobile-link block px-4 py-3.5 text-base font-medium rounded-xl transition-all duration-200 ${
+                    isNavScrolled
+                      ? "text-foreground hover:text-primary hover:bg-muted"
+                      : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
+                  }`}
+                >
+                  {item.label}
+                </a>
+                {megaCategories && (
+                  <div className="ml-4 pl-4 border-l-2 border-primary/20 space-y-3 py-2">
+                    {megaCategories.map((cat) => (
+                      <div key={cat.title}>
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-primary px-2">{cat.title}</span>
+                        <div className="mt-1 space-y-0.5">
+                          {cat.links.map((link) => (
+                            <a
+                              key={link.label}
+                              href={link.href}
+                              onClick={(e) => handleNavClick(e, link.href)}
+                              className={`block px-2 py-2 text-sm rounded-lg transition-colors ${
+                                isNavScrolled
+                                  ? "text-muted-foreground hover:text-primary hover:bg-muted"
+                                  : "text-primary-foreground/60 hover:text-primary-foreground hover:bg-white/10"
+                              }`}
+                            >
+                              {link.label}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
           <div className="pt-5 flex flex-col gap-3">
             <Button variant="hero" className="w-full" size="lg">Get in Touch</Button>
             <Button variant={isNavScrolled ? "outline" : "heroOutline"} className="w-full" size="lg">Find a Station</Button>
