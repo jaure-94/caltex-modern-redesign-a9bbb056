@@ -106,7 +106,7 @@ const NavMegaMenu = ({ categories, isOpen, isScrolled }: NavMegaMenuProps) => {
       <div
         className={`rounded-2xl border shadow-2xl backdrop-blur-xl min-w-[420px] overflow-hidden ${
           isScrolled
-            ? "bg-background/98 border-border"
+            ? "bg-background border-border"
             : "bg-secondary/95 border-white/10"
         }`}
       >
