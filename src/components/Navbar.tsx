@@ -7,12 +7,12 @@ import { useSiteStore } from "@/store/siteStore";
 import caltexLogo from "@/assets/caltex-logo-2.svg";
 import { NavMegaMenu, motoristMenu, businessMenu } from "@/components/NavMegaMenu";
 
-const navItems: { label: string; href: string; isRoute?: boolean }[] = [
+const navItems: { label: string; href: string; isRoute?: boolean; hasMega?: "motorists" | "business" }[] = [
   { label: "Home", href: "#home" },
   { label: "About", href: "/about", isRoute: true },
   { label: "Find a Station", href: "#find-station" },
-  { label: "Motorists", href: "#motorists" },
-  { label: "Business", href: "#business" },
+  { label: "Motorists", href: "#motorists", hasMega: "motorists" },
+  { label: "Business", href: "#business", hasMega: "business" },
   { label: "Contact", href: "/contact", isRoute: true },
   { label: "Blog", href: "#blog" },
 ];
