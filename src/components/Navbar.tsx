@@ -18,6 +18,8 @@ const navItems: { label: string; href: string; isRoute?: boolean; hasMega?: "mot
 ];
 
 const Navbar = () => {
+  const [openMega, setOpenMega] = useState<string | null>(null);
+  const megaTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { isNavScrolled, isMobileMenuOpen, setIsNavScrolled, toggleMobileMenu, setIsMobileMenuOpen } = useSiteStore();
   const navigate = useNavigate();
   const location = useLocation();
