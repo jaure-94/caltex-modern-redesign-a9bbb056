@@ -12,7 +12,7 @@ const navItems: { label: string; href: string; isRoute?: boolean }[] = [
   { label: "Find a Station", href: "#find-station" },
   { label: "Motorists", href: "#motorists" },
   { label: "Business", href: "#business" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact", isRoute: true },
   { label: "Blog", href: "#blog" },
 ];
 
