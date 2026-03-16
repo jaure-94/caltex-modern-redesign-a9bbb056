@@ -1,22 +1,25 @@
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef, useCallback, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import gsap from "gsap";
 import { useSiteStore } from "@/store/siteStore";
 import caltexLogo from "@/assets/caltex-logo-2.svg";
+import { NavMegaMenu, motoristMenu, businessMenu } from "@/components/NavMegaMenu";
 
-const navItems: { label: string; href: string; isRoute?: boolean }[] = [
+const navItems: { label: string; href: string; isRoute?: boolean; hasMega?: "motorists" | "business" }[] = [
   { label: "Home", href: "#home" },
   { label: "About", href: "/about", isRoute: true },
   { label: "Find a Station", href: "#find-station" },
-  { label: "Motorists", href: "#motorists" },
-  { label: "Business", href: "#business" },
+  { label: "Motorists", href: "#motorists", hasMega: "motorists" },
+  { label: "Business", href: "#business", hasMega: "business" },
   { label: "Contact", href: "/contact", isRoute: true },
   { label: "Blog", href: "#blog" },
 ];
 
 const Navbar = () => {
+  const [openMega, setOpenMega] = useState<string | null>(null);
+  const megaTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { isNavScrolled, isMobileMenuOpen, setIsNavScrolled, toggleMobileMenu, setIsMobileMenuOpen } = useSiteStore();
   const navigate = useNavigate();
   const location = useLocation();
@@ -128,21 +131,47 @@ const Navbar = () => {
 
           {/* Desktop Nav Links */}
           <div ref={navLinksRef} className="hidden lg:flex items-center gap-0.5">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
-                className={`nav-link opacity-0 relative px-4 py-2.5 text-[13px] font-medium transition-all duration-300 rounded-lg group ${
-                  isNavScrolled
-                    ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
-                    : "text-primary-foreground/75 hover:text-primary-foreground hover:bg-primary-foreground/10"
-                }`}
-              >
-                {item.label}
-                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-primary rounded-full transition-all duration-300 group-hover:w-2/3" />
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const hasMega = item.hasMega;
+              const megaCategories = hasMega === "motorists" ? motoristMenu : hasMega === "business" ? businessMenu : null;
+
+              return (
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => {
+                    if (hasMega) {
+                      if (megaTimeoutRef.current) clearTimeout(megaTimeoutRef.current);
+                      setOpenMega(hasMega);
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    if (hasMega) {
+                      megaTimeoutRef.current = setTimeout(() => setOpenMega(null), 150);
+                    }
+                  }}
+                >
+                  <a
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
+                    className={`nav-link opacity-0 relative px-4 py-2.5 text-[13px] font-medium transition-all duration-300 rounded-lg group flex items-center gap-1 ${
+                      isNavScrolled
+                        ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                        : "text-primary-foreground/75 hover:text-primary-foreground hover:bg-primary-foreground/10"
+                    }`}
+                  >
+                    {item.label}
+                    {hasMega && (
+                      <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${openMega === hasMega ? "rotate-180" : ""}`} />
+                    )}
+                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-primary rounded-full transition-all duration-300 group-hover:w-2/3" />
+                  </a>
+                  {megaCategories && (
+                    <NavMegaMenu categories={megaCategories} isOpen={openMega === hasMega} isScrolled={isNavScrolled} />
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* Desktop CTA */}
@@ -185,20 +214,49 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div ref={mobileMenuRef} className="lg:hidden overflow-hidden" style={{ display: "none" }}>
         <div className={`section-padding pb-8 pt-4 space-y-1 ${isNavScrolled ? "" : "bg-secondary/95 backdrop-blur-xl"}`}>
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
-              className={`mobile-link block px-4 py-3.5 text-base font-medium rounded-xl transition-all duration-200 ${
-                isNavScrolled
-                  ? "text-foreground hover:text-primary hover:bg-muted"
-                  : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
-              }`}
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const megaCategories = item.hasMega === "motorists" ? motoristMenu : item.hasMega === "business" ? businessMenu : null;
+            return (
+              <div key={item.label}>
+                <a
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href, item.isRoute)}
+                  className={`mobile-link block px-4 py-3.5 text-base font-medium rounded-xl transition-all duration-200 ${
+                    isNavScrolled
+                      ? "text-foreground hover:text-primary hover:bg-muted"
+                      : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
+                  }`}
+                >
+                  {item.label}
+                </a>
+                {megaCategories && (
+                  <div className="ml-4 pl-4 border-l-2 border-primary/20 space-y-3 py-2">
+                    {megaCategories.map((cat) => (
+                      <div key={cat.title}>
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-primary px-2">{cat.title}</span>
+                        <div className="mt-1 space-y-0.5">
+                          {cat.links.map((link) => (
+                            <a
+                              key={link.label}
+                              href={link.href}
+                              onClick={(e) => handleNavClick(e, link.href)}
+                              className={`block px-2 py-2 text-sm rounded-lg transition-colors ${
+                                isNavScrolled
+                                  ? "text-muted-foreground hover:text-primary hover:bg-muted"
+                                  : "text-primary-foreground/60 hover:text-primary-foreground hover:bg-white/10"
+                              }`}
+                            >
+                              {link.label}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
           <div className="pt-5 flex flex-col gap-3">
             <Button variant="hero" className="w-full" size="lg">Get in Touch</Button>
             <Button variant={isNavScrolled ? "outline" : "heroOutline"} className="w-full" size="lg">Find a Station</Button>
