@@ -1,4 +1,5 @@
 import { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ChevronRight } from "lucide-react";
 
@@ -31,7 +32,7 @@ const motoristMenu: MenuCategory[] = [
   {
     title: "Products",
     links: [
-      { label: "Techron Technology", href: "#techron" },
+      { label: "Techron Technology", href: "/motorists/products/techron-technology" },
       { label: "Lubricants", href: "#lubricants" },
     ],
   },
@@ -124,23 +125,28 @@ const NavMegaMenu = ({ categories, isOpen, isScrolled }: NavMegaMenuProps) => {
                 {category.title}
               </h4>
               <ul className="space-y-0.5">
-                {category.links.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className={`mega-link group flex items-center gap-2 px-2.5 py-2 rounded-lg text-[13px] font-medium transition-all duration-200 ${
-                        isScrolled
-                          ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
-                          : "text-secondary-foreground/70 hover:text-primary-foreground hover:bg-white/10"
-                      }`}
-                    >
-                      <ChevronRight
-                        className="w-3 h-3 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200 text-primary"
-                      />
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
+                {category.links.map((link) => {
+                  const isRoute = link.href.startsWith("/");
+                  const Comp = isRoute ? Link : "a";
+                  const linkProps = isRoute ? { to: link.href } : { href: link.href };
+                  return (
+                    <li key={link.label}>
+                      <Comp
+                        {...(linkProps as any)}
+                        className={`mega-link group flex items-center gap-2 px-2.5 py-2 rounded-lg text-[13px] font-medium transition-all duration-200 ${
+                          isScrolled
+                            ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                            : "text-secondary-foreground/70 hover:text-primary-foreground hover:bg-white/10"
+                        }`}
+                      >
+                        <ChevronRight
+                          className="w-3 h-3 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200 text-primary"
+                        />
+                        {link.label}
+                      </Comp>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
