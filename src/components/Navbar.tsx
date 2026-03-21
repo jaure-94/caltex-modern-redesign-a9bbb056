@@ -10,7 +10,7 @@ import { NavMegaMenu, motoristMenu, businessMenu } from "@/components/NavMegaMen
 const navItems: { label: string; href: string; isRoute?: boolean; hasMega?: "motorists" | "business" }[] = [
   { label: "Home", href: "#home" },
   { label: "About", href: "/about", isRoute: true },
-  { label: "Find a Station", href: "#find-station" },
+  { label: "Find a Station", href: "/find-a-station", isRoute: true },
   { label: "Motorists", href: "#motorists", hasMega: "motorists" },
   { label: "Business", href: "#business", hasMega: "business" },
   { label: "Contact", href: "/contact", isRoute: true },
@@ -179,7 +179,7 @@ const Navbar = () => {
             <Button 
               variant={isNavScrolled ? "outline" : "heroOutline"} 
               size="sm"
-              onClick={(e) => handleNavClick(e as any, "#find-station")}
+              onClick={() => navigate("/find-a-station")}
             >
               Find a Station
             </Button>
