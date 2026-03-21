@@ -179,7 +179,7 @@ const Navbar = () => {
             <Button 
               variant={isNavScrolled ? "outline" : "heroOutline"} 
               size="sm"
-              onClick={(e) => handleNavClick(e as any, "#find-station")}
+              onClick={() => navigate("/find-a-station")}
             >
               Find a Station
             </Button>
