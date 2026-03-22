@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import TechronTechnology from "./pages/motorists/TechronTechnology";
+import Lubricants from "./pages/motorists/Lubricants";
 import FindStation from "./pages/FindStation";
 import Blog from "./pages/Blog";
 import BlogArticle from "./pages/BlogArticle";
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/find-a-station" element={<FindStation />} />
           <Route path="/motorists/products/techron-technology" element={<TechronTechnology />} />
+          <Route path="/motorists/products/lubricants" element={<Lubricants />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogArticle />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
