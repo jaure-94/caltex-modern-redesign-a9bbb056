@@ -1,8 +1,5 @@
-// @ts-ignore: Vite handles image imports
 import heroStation from "@/assets/hero-station.jpg";
-// @ts-ignore: Vite handles image imports
 import stationAerial from "@/assets/station-aerial.jpg";
-// @ts-ignore: Vite handles image imports
 import fuelPump from "@/assets/fuel-pump.jpg";
 
 export interface BlogPost {

@@ -1,39 +1,11 @@
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { ArrowRight, Calendar } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import heroStation from "@/assets/hero-station.jpg";
-import stationAerial from "@/assets/station-aerial.jpg";
-import fuelPump from "@/assets/fuel-pump.jpg";
+import { blogPosts } from "@/data/blogPosts";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const blogPosts = [
-  {
-    image: heroStation,
-    category: "Techron® Technology",
-    title: "How Techron® Clean & Glide Technology™ Protects Your Engine",
-    excerpt: "Discover the science behind Caltex with Techron® and how it keeps your engine deposits-free for optimal performance.",
-    date: "Feb 28, 2026",
-    readTime: "5 min read",
-  },
-  {
-    image: stationAerial,
-    category: "Fuel Tips",
-    title: "5 Ways to Improve Your Vehicle's Fuel Efficiency This Summer",
-    excerpt: "Simple tips that can help you save fuel and money while driving across South Africa's beautiful landscapes.",
-    date: "Feb 15, 2026",
-    readTime: "4 min read",
-  },
-  {
-    image: fuelPump,
-    category: "Industry News",
-    title: "Understanding South Africa's Fuel Price Structure in 2026",
-    excerpt: "A breakdown of how fuel prices are determined and what factors influence the monthly changes at the pump.",
-    date: "Feb 5, 2026",
-    readTime: "6 min read",
-  },
-];
 
 const BlogSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -73,15 +45,15 @@ const BlogSection = () => {
               From the <span className="text-gradient-red">Blog</span>
             </h2>
           </div>
-          <a href="#" className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all duration-300">
-            View All Articles <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </a>
+           <Link to="/blog" className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all duration-300">
+             View All Articles <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+           </Link>
         </div>
 
         {/* Blog Grid */}
         <div className="blog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {blogPosts.map((post) => (
-            <article key={post.title} className="blog-card group cursor-pointer">
+            <Link to={`/blog/${post.slug}`} key={post.slug} className="blog-card group cursor-pointer">
               <div className="rounded-2xl overflow-hidden mb-5 relative">
                 <img
                   src={post.image}
@@ -108,7 +80,7 @@ const BlogSection = () => {
               <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
                 {post.excerpt}
               </p>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

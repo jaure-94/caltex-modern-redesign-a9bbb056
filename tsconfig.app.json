@@ -30,6 +30,8 @@
     "useDefineForClassFields": true
   },
   "include": [
-    "src"
+    "src",
+    "src/vite-env.d.ts",
+    "src/types/**/*.d.ts"
   ]
 }

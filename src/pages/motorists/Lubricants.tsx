@@ -1,5 +1,4 @@
 import { Car, Bike, Truck, Shield, Droplets, Thermometer, Gauge } from "lucide-react";
-import ScrollToTop from "@/components/ScrollToTop";
 import PageHero from "@/components/reusable/PageHero";
 import ContentSection from "@/components/reusable/ContentSection";
 import FeatureGrid from "@/components/reusable/FeatureGrid";
