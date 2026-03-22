@@ -8,6 +8,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import TechronTechnology from "./pages/motorists/TechronTechnology";
 import FindStation from "./pages/FindStation";
+import Blog from "./pages/Blog";
+import BlogArticle from "./pages/BlogArticle";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
