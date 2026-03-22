@@ -143,7 +143,7 @@ const About = () => {
 
             <h1 className="opacity-0 font-display text-5xl sm:text-6xl md:text-7xl font-bold text-primary-foreground leading-[1.05] mb-7 text-balance">
               One Journey.{" "}
-              <span className="text-gradient-red">Almost 90 Years</span>{" "}
+              <span className="text-gradient-red">Almost 80 Years</span>{" "}
               in the Making.
             </h1>
 
