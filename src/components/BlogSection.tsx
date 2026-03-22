@@ -80,7 +80,7 @@ const BlogSection = () => {
               <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
                 {post.excerpt}
               </p>
-            </article>
+            </Link>
           ))}
         </div>
       </div>
