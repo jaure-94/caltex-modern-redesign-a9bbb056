@@ -45,9 +45,9 @@ const BlogSection = () => {
               From the <span className="text-gradient-red">Blog</span>
             </h2>
           </div>
-          <a href="#" className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all duration-300">
-            View All Articles <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </a>
+           <Link to="/blog" className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all duration-300">
+             View All Articles <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+           </Link>
         </div>
 
         {/* Blog Grid */}
