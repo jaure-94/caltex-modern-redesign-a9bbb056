@@ -33,7 +33,7 @@ const motoristMenu: MenuCategory[] = [
     title: "Products",
     links: [
       { label: "Techron Technology", href: "/motorists/products/techron-technology" },
-      { label: "Lubricants", href: "#lubricants" },
+      { label: "Lubricants", href: "/motorists/products/lubricants" },
     ],
   },
   {

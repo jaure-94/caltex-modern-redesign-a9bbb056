@@ -4,8 +4,6 @@ import { ArrowRight, ArrowLeft, Star, Fuel, MapPin, Users, Shield, Award, Buildi
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import stationAerial from "@/assets/sa-highway.jpg";
 import heroNight from "@/assets/hero-night.jpg";
 import familyStation from "@/assets/family-station.jpg";
@@ -123,7 +121,6 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
-      <Navbar />
 
       {/* Hero */}
       <section ref={heroRef} className="relative min-h-[85vh] flex items-center overflow-hidden bg-caltex-dark">
@@ -412,7 +409,6 @@ const About = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

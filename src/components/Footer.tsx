@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin, ArrowUpRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import caltexLogo from "@/assets/caltex-logo.png";
+import caltexLogo from "@/assets/caltex-vantage-logo-no-bg.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,8 +55,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-4">
             <div className="flex items-center gap-3 mb-6">
-              <img src={caltexLogo} alt="Caltex" className="h-10 w-10" />
-              <span className="font-display text-2xl font-bold tracking-tight">CALTEX</span>
+              <img src={caltexLogo} alt="Caltex" className="h-20" />
             </div>
             <p className="text-primary-foreground/50 text-sm leading-relaxed mb-8 max-w-sm">
               Quality fuels and clean petrol stations across South Africa. Powered by Techron® technology, trusted by millions of motorists since 1936.
