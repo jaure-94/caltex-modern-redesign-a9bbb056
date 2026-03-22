@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import TechronTechnology from "./pages/motorists/TechronTechnology";
+import Lubricants from "./pages/motorists/Lubricants";
 import FindStation from "./pages/FindStation";
 import Blog from "./pages/Blog";
 import BlogArticle from "./pages/BlogArticle";
