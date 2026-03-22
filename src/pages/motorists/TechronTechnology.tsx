@@ -1,6 +1,4 @@
 import { Zap, Shield, Gauge, Leaf } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import PageHero from "@/components/reusable/PageHero";
 import ContentSection from "@/components/reusable/ContentSection";
@@ -38,8 +36,6 @@ const techronFeatures = [
 const TechronTechnology = () => {
   return (
     <div className="min-h-screen bg-background">
-      <ScrollToTop />
-      <Navbar />
 
       <PageHero
         title="Techron® Technology"
@@ -132,7 +128,6 @@ const TechronTechnology = () => {
         variant="red"
       />
 
-      <Footer />
     </div>
   );
 };
