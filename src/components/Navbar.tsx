@@ -14,7 +14,7 @@ const navItems: { label: string; href: string; isRoute?: boolean; hasMega?: "mot
   { label: "Motorists", href: "#motorists", hasMega: "motorists" },
   { label: "Business", href: "#business", hasMega: "business" },
   { label: "Contact", href: "/contact", isRoute: true },
-  { label: "Blog", href: "#blog" },
+  { label: "Blog", href: "/blog", isRoute: true },
 ];
 
 const Navbar = () => {
