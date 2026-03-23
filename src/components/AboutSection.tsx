@@ -10,8 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
   { value: 800, suffix: "+", label: "Stations Nationwide" },
-  { value: 87, suffix: "yrs", label: "Years of Trust" },
-  { value: 10, suffix: "k+", label: "Satisfied Motorists" },
+  { value: 90, suffix: "yrs", label: "Years of Trust" },
+  { value: 10, suffix: "+", label: "Satisfied Motorists" },
 ];
 
 const AboutSection = () => {

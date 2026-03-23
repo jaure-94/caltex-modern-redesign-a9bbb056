@@ -96,7 +96,7 @@ const TechronSection = () => {
               <p className="text-primary-foreground/60 text-sm leading-relaxed mb-5 max-w-md">
                 Good diesel just got better. Advanced formula delivers improved fuel economy, engine protection, and reduced emissions for commercial and personal vehicles.
               </p>
-              <Button variant="heroOutline" size="sm">
+              <Button variant="hero" size="sm">
                 Explore Diesel <ArrowRight size={14} />
               </Button>
             </div>

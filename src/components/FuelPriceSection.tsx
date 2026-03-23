@@ -9,8 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const fuelPrices = [
   { name: "95 Unleaded Petrol", sub: "with Techron®", price: "20.30", trend: "down" as const },
   { name: "93 Unleaded Petrol", sub: "with Techron®", price: "20.19", trend: "down" as const },
-  { name: "Diesel 50", sub: "with Techron® D", price: "18.42", trend: "down" as const },
-  { name: "93 LRP Petrol", sub: "with Techron®", price: "20.30", trend: "up" as const },
+  { name: "Diesel 50", sub: "with Techron® D", price: "18.60", trend: "down" as const }
 ];
 
 const FuelPriceSection = () => {
@@ -63,12 +62,12 @@ const FuelPriceSection = () => {
             Inland Fuel Prices
           </h2>
           <p className="text-primary-foreground/40 text-lg">
-            Last updated: March 2026 · Prices in cents per litre
+            Last updated: March 2026 · Prices in Rands and cents per litre
           </p>
         </div>
 
         {/* Price Cards */}
-        <div className="fuel-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mb-20">
+        <div className="fuel-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto mb-20">
           {fuelPrices.map((fuel) => (
             <div key={fuel.name} className="fuel-card card-glass-dark rounded-2xl p-6 text-center hover:border-primary/30 transition-all duration-400 hover:-translate-y-1.5 group cursor-pointer">
               <div className="w-11 h-11 rounded-xl bg-primary/15 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/25 transition-colors">

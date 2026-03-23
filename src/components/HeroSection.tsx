@@ -117,10 +117,25 @@ const HeroSection = () => {
 
   return (
     <section ref={sectionRef} id="home" className="relative min-h-screen flex items-center overflow-hidden bg-caltex-dark">
-      {/* Background Image with Ken Burns */}
+      {/* Background Video */}
+      <div ref={imageRef} className="absolute inset-[-20px]">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover scale-105"
+          poster=""
+        >
+          <source src="/videos/hero-bg.mp4" type="video/mp4" />
+        </video>
+      </div>
+      
+      {/* Background Image with Ken Burns
       <div ref={imageRef} className="absolute inset-[-20px]">
         <img src={heroImage} alt="Caltex Station at Night" className="w-full h-full object-cover scale-105" />
-      </div>
+      </div> */}
 
       {/* Overlays */}
       <div ref={overlayRef} className="absolute inset-0 opacity-0">

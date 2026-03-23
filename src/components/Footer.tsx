@@ -33,16 +33,16 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3 text-primary-foreground/90">
               <MapPin size={16} />
-              <span className="text-sm">1 Parc du Cap, Mispel Road, Bellville, Cape Town, 7530</span>
+              <span className="text-sm">34 Impala Road, Chiselhurston, Sandton, 2196, Johannesburg, South Africa.</span>
             </div>
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2 text-primary-foreground/90">
                 <Phone size={14} />
-                <span className="text-sm font-medium">021 403 7911</span>
+                <span className="text-sm font-medium">+27 11 646 2562</span>
               </div>
               <div className="flex items-center gap-2 text-primary-foreground/90">
                 <Mail size={14} />
-                <span className="text-sm font-medium">info@caltex.co.za</span>
+                <span className="text-sm font-medium">info@vantagepetroleum.com</span>
               </div>
             </div>
           </div>
