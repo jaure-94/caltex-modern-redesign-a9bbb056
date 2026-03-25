@@ -1,5 +1,5 @@
 import heroStation from "@/assets/hero-station.jpg";
-import stationAerial from "@/assets/station-aerial.jpg";
+import stationAerial from "@/assets/car-refueling-fuel-station.jpg";
 import fuelPump from "@/assets/fuel-pump.jpg";
 
 export interface BlogPost {

@@ -142,10 +142,10 @@ const Footer = () => {
       <div className="border-t border-primary-foreground/8">
         <div className="section-padding section-max py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-primary-foreground/30">
-            © {new Date().getFullYear()} Caltex South Africa. All rights reserved. A Chevron brand.
+            © {new Date().getFullYear()} Caltex South Africa. All rights reserved.
           </p>
           <p className="text-xs text-primary-foreground/30">
-            Techron® is a registered trademark of Chevron Intellectual Property LLC.
+            Licenced and Powered in South Africa by <a href="https://vantagepetroleum.com/" className="underline hover:text-primary transition-colors">Vantage Petroleum (Pty) Ltd.</a>
           </p>
         </div>
       </div>

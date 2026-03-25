@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Building2, TrendingUp, Users, Shield } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import businessImg from "@/assets/business.jpg";
-import freshstopImg from "@/assets/freshstop-modern.jpg";
+import businessImg from "@/assets/caltex-fuel-station-4.jpg";
+import freshstopImg from "@/assets/freshstop.png";
 
 gsap.registerPlugin(ScrollTrigger);
 

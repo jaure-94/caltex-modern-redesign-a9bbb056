@@ -1,7 +1,7 @@
 // @ts-ignore: Vite handles image imports
 import heroStation from "@/assets/hero-station.jpg";
 // @ts-ignore: Vite handles image imports
-import stationAerial from "@/assets/station-aerial.jpg";
+import stationAerial from "@/assets/car-refueling-fuel-station.jpg";
 // @ts-ignore: Vite handles image imports
 import fuelPump from "@/assets/fuel-pump.jpg";
 

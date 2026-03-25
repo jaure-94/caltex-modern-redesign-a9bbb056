@@ -9,6 +9,7 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import TechronTechnology from "@/pages/motorists/TechronTechnology";
 import Lubricants from "@/pages/motorists/Lubricants";
+import Diesel from "@/pages/business/Diesel";
 import FindStation from "@/pages/FindStation";
 import Blog from "@/pages/Blog";
 import NotFound from "@/pages/NotFound";
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/find-a-station" element={<FindStation />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/business/products/diesel" element={<Diesel />} />
             <Route path="/motorists/products/techron-technology" element={<TechronTechnology />} />
             <Route path="/motorists/products/lubricants" element={<Lubricants />} />
           </Route>
