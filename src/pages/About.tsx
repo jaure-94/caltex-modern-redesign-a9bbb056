@@ -1,11 +1,11 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowLeft, Star, Fuel, MapPin, Users, Shield, Award, Building2, Briefcase, Factory, UserCheck } from "lucide-react";
+import { ArrowRight, ArrowLeft, Fuel, MapPin, Users, Shield, Award, Building2, Briefcase, Factory, UserCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import stationAerial from "@/assets/sa-highway.jpg";
-import heroNight from "@/assets/hero-night.jpg";
+import heroNight from "@/assets/caltex-bgc-d.jpg";
 import familyStation from "@/assets/family-station.jpg";
 import freshstop from "@/assets/freshstop-modern.jpg";
 import engineClean from "@/assets/engine-clean.jpg";
@@ -132,18 +132,20 @@ const About = () => {
 
         <div className="relative z-10 section-padding w-full pt-40 pb-24">
           <div className="about-hero-content max-w-3xl">
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 text-primary-foreground/50 hover:text-primary-foreground/80 transition-colors mb-8 text-sm font-medium"
-            >
-              <ArrowLeft size={16} /> Back to Home
-            </Link>
+            <div className="flex flex-col gap-1">
+              <Link
+                to="/"
+                className="inline-flex items-center gap-2 text-primary-foreground/50 hover:text-primary-foreground/80 transition-colors mb-8 text-sm font-medium"
+              >
+                <ArrowLeft size={16} /> Back to Home
+              </Link>
 
-            <span className="section-label mb-6 inline-block opacity-0">Our Journey</span>
+              <span className="section-label mb-6 inline-block max-w-40">Our Journey</span>
+            </div>
 
             <h1 className="opacity-0 font-display text-5xl sm:text-6xl md:text-7xl font-bold text-primary-foreground leading-[1.05] mb-7 text-balance">
               One Journey.{" "}
-              <span className="text-gradient-red">Almost 80 Years</span>{" "}
+              <span className="text-gradient-red">Almost 90 Years</span>{" "}
               in the Making.
             </h1>
 
@@ -152,9 +154,11 @@ const About = () => {
             </p>
 
             <div className="opacity-0 flex flex-wrap gap-4">
-              <Button variant="hero" size="xl">
-                Explore Our Stations <MapPin size={18} />
-              </Button>
+              <Link to="/find-a-station">
+                <Button variant="hero" size="xl">
+                  Explore Our Stations <MapPin size={18} />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -199,9 +203,9 @@ const About = () => {
               </p>
               <div className="opacity-0 grid grid-cols-2 gap-6">
                 {[
-                  { value: "800+", label: "Stations Nationwide" },
-                  { value: "87+", label: "Years of Trust" },
-                  { value: "29", label: "Countries Worldwide" },
+                  // { value: "800+", label: "Stations Nationwide" },
+                  { value: "90", label: "Years of Trust" },
+                  // { value: "29", label: "Countries Worldwide" },
                   { value: "24/7", label: "FreshStop Convenience" },
                 ].map((stat) => (
                   <div key={stat.label} className="py-4 border-l-2 border-primary/30 pl-5">

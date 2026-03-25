@@ -114,7 +114,7 @@ const AboutSection = () => {
                 "Techron® Clean Engine Technology in every grade",
                 "Many new sites coming up all over South Africa",
                 "FreshStop convenience stores open 24/7",
-                "Tap & Go contactless payment nationwide",
+                "Millions of satisfied customers over the year",
                 "90 years of fueling SA, with a new refreshed Caltex 2.0 experience",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3">
