@@ -78,9 +78,11 @@ const TechronSection = () => {
               <p className="text-primary-foreground/60 text-sm leading-relaxed mb-5 max-w-md">
                 Clean & Glide Technology™ removes harmful engine deposits and prevents new ones from forming, keeping your engine running at peak performance.
               </p>
-              <Button variant="hero" size="sm">
-                <a href="/motorists/products/techron-technology" className="flex flex-row items-center gap-2">Learn More <ArrowRight size={14} /></a>
-              </Button>
+              <a href="/motorists/products/techron-technology" className="flex flex-row items-center gap-2">
+                <Button variant="hero" size="sm">
+                  Learn More <ArrowRight size={14} />
+                </Button>
+              </a>
             </div>
           </div>
 
@@ -96,11 +98,11 @@ const TechronSection = () => {
               <p className="text-primary-foreground/60 text-sm leading-relaxed mb-5 max-w-md">
                 Good diesel just got better. Advanced formula delivers improved fuel economy, engine protection, and reduced emissions for commercial and personal vehicles.
               </p>
-              <Button variant="hero" size="sm">
-                <a href="/business/products/diesel" className="flex flex-row items-center gap-2">
-                  Explore Diesel <ArrowRight size={14} />
-                </a>
-              </Button>
+              <a href="/business/products/diesel" className="flex flex-row items-center gap-2">
+                <Button variant="hero" size="sm">
+                    Explore Diesel <ArrowRight size={14} />
+                </Button>
+              </a>
             </div>
           </div>
         </div>

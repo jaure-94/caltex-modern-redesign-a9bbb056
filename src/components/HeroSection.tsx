@@ -178,16 +178,16 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div ref={ctaRef} className="opacity-0 flex flex-wrap gap-4">
-            <Button variant="hero" size="xl">
-              <a href="/find-a-station" className="flex flex-row items-center gap-2">
-                Find a Caltex Station <MapPin size={18} />
-              </a>
-            </Button>
-            <Button variant="heroOutline" size="xl">
-              <a href="/motorists/products/techron-technology" className="flex flex-row items-center gap-2">
-                Explore Techron® <ArrowRight size={18} />
-              </a>
-            </Button>
+            <a href="/find-a-station" className="flex flex-row items-center gap-2">
+              <Button variant="hero" size="xl">
+                  Find a Caltex Station <MapPin size={18} />
+              </Button>
+            </a>
+            <a href="/motorists/products/techron-technology" className="flex flex-row items-center gap-2">
+              <Button variant="heroOutline" size="xl">
+                  Explore Techron® <ArrowRight size={18} />
+              </Button>
+            </a>
           </div>
         </div>
 

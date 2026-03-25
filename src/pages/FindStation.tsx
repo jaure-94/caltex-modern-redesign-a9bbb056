@@ -1,8 +1,5 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import ScrollToTop from "@/components/ScrollToTop";
 import StationMap from "@/components/StationMap";
 import { MapPin } from "lucide-react";
 
@@ -48,8 +45,6 @@ const FindStation = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <ScrollToTop />
-      <Navbar />
 
       {/* Hero header */}
       <div
@@ -107,7 +102,6 @@ const FindStation = () => {
       {/* Bottom spacing */}
       <div className="h-20" />
 
-      <Footer />
     </div>
   );
 };
