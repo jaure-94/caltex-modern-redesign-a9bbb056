@@ -136,7 +136,9 @@ const AboutSection = () => {
             </div>
 
             <Button variant="hero" size="lg">
-              Learn More About Us <ArrowRight size={18} />
+              <a href="/about" className="flex flex-row items-center gap-2">
+                Learn More About Us <ArrowRight size={18} />
+              </a>
             </Button>
           </div>
         </div>

@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import { Calendar, ArrowRight, Clock } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import ScrollToTop from "@/components/ScrollToTop";
 import PageHero from "@/components/reusable/PageHero";
 import heroStation from "@/assets/hero-station.jpg";
 import { blogPosts } from "@/data/blogPosts";
@@ -42,7 +39,6 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
-      <Navbar />
 
       <PageHero
         title="Insights & Articles"
@@ -143,8 +139,6 @@ const Blog = () => {
         </div>
       </section>
 
-      <Footer />
-      <ScrollToTop />
     </div>
   );
 };

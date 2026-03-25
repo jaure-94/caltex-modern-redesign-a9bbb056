@@ -79,7 +79,7 @@ const TechronSection = () => {
                 Clean & Glide Technology™ removes harmful engine deposits and prevents new ones from forming, keeping your engine running at peak performance.
               </p>
               <Button variant="hero" size="sm">
-                <a href="/motorists/products/techron-technology" className="flex flex-row">Learn More <ArrowRight size={14} /></a>
+                <a href="/motorists/products/techron-technology" className="flex flex-row items-center gap-2">Learn More <ArrowRight size={14} /></a>
               </Button>
             </div>
           </div>
@@ -97,7 +97,9 @@ const TechronSection = () => {
                 Good diesel just got better. Advanced formula delivers improved fuel economy, engine protection, and reduced emissions for commercial and personal vehicles.
               </p>
               <Button variant="hero" size="sm">
-                <a href="/business/products/diesel" className="flex flex-row">Explore Diesel <ArrowRight size={14} /></a>
+                <a href="/business/products/diesel" className="flex flex-row items-center gap-2">
+                  Explore Diesel <ArrowRight size={14} />
+                </a>
               </Button>
             </div>
           </div>

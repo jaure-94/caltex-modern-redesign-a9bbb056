@@ -119,7 +119,9 @@ const FuelPriceSection = () => {
                 />
               </div>
               <Button variant="hero" className="h-12 px-6">
-                Find Station <ArrowRight size={16} />
+                <a href="/find-a-station" className="flex flex-row items-center gap-2">
+                  Find Station <ArrowRight size={16} />
+                </a>
               </Button>
             </div>
           </div>
