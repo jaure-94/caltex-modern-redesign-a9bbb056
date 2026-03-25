@@ -10,10 +10,7 @@ import { MapPin, Phone, Mail, Clock, ChevronDown, Send, CheckCircle } from "luci
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import ScrollToTop from "@/components/ScrollToTop";
-import heroNight from "@/assets/hero-night.jpg";
+import heroNight from "@/assets/caltex-bgc-d.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,17 +47,17 @@ const contactDetails = [
   {
     icon: MapPin,
     title: "Head Office",
-    lines: ["Caltex House, Century City", "Cape Town, South Africa"],
+    lines: ["34 Impala Road, Chiselhurston, Sandton, 2196,", "Johannesburg, South Africa"],
   },
   {
     icon: Phone,
     title: "Call Us",
-    lines: ["0800 022 5839", "Mon – Fri: 08:00 – 17:00"],
+    lines: ["+27 11 646 2562", "Mon – Fri: 08:00 – 17:00"],
   },
   {
     icon: Mail,
     title: "Email",
-    lines: ["info@caltex.co.za", "We respond within 24 hours"],
+    lines: ["info@vantagepetroleum.com", "We respond within 24 hours"],
   },
   {
     icon: Clock,
@@ -145,7 +142,6 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
 
       {/* Hero */}
       <section ref={heroRef} className="relative min-h-[50vh] flex items-center overflow-hidden">
@@ -157,10 +153,12 @@ const Contact = () => {
 
         <div className="relative z-10 section-padding section-max w-full py-32 lg:py-40">
           <div className="contact-hero-content max-w-2xl">
-            <Link to="/" className="inline-flex items-center gap-2 text-primary-foreground/60 hover:text-primary-foreground text-sm font-medium mb-6 transition-colors">
-              ← Back to Home
-            </Link>
-            <span className="section-label mb-5 inline-block">Get in Touch</span>
+            <div className="flex flex-col">
+              <Link to="/" className="inline-flex items-center gap-2 text-primary-foreground/60 hover:text-primary-foreground text-sm font-medium mb-6 transition-colors">
+                ← Back to Home
+              </Link>
+              <span className="section-label mb-5 inline-block w-fit">Get in Touch</span>
+            </div>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-[1.1] mb-5">
               Contact <span className="text-gradient-red">Caltex SA</span>
             </h1>
@@ -413,8 +411,6 @@ const Contact = () => {
         </div>
       </section>
 
-      <Footer />
-      <ScrollToTop />
     </div>
   );
 };

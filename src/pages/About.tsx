@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import stationAerial from "@/assets/sa-highway.jpg";
 import heroNight from "@/assets/caltex-bgc-d.jpg";
 import familyStation from "@/assets/family-station.jpg";
-import freshstop from "@/assets/freshstop-modern.jpg";
+import freshstop from "@/assets/freshstop.png";
 import engineClean from "@/assets/engine-clean.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -140,7 +140,7 @@ const About = () => {
                 <ArrowLeft size={16} /> Back to Home
               </Link>
 
-              <span className="section-label mb-6 inline-block max-w-40">Our Journey</span>
+              <span className="section-label mb-6 inline-block w-fit">Our Journey</span>
             </div>
 
             <h1 className="opacity-0 font-display text-5xl sm:text-6xl md:text-7xl font-bold text-primary-foreground leading-[1.05] mb-7 text-balance">
@@ -395,9 +395,11 @@ const About = () => {
                 With Tap & Go contactless payment, clean restrooms, and friendly service, every Caltex station is designed to make your stop as quick and pleasant as possible.
               </p>
               <div className="opacity-0">
-                <Button variant="hero" size="lg">
-                  Find Your Nearest Station <ArrowRight size={18} />
-                </Button>
+                <Link to="/find-a-station">
+                  <Button variant="hero" size="lg">
+                    Find Your Nearest Station <ArrowRight size={18} />
+                  </Button>
+                </Link>
               </div>
             </div>
 

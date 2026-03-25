@@ -57,7 +57,7 @@ const businessMenu: MenuCategory[] = [
   {
     title: "Products",
     links: [
-      { label: "Caltex Diesel Fuel", href: "#diesel-fuel" },
+      { label: "Caltex Diesel Fuel", href: "/business/products/diesel-fuel" },
       { label: "Automotive Gasoline", href: "#gasoline" },
       { label: "Fuel Oil", href: "#fuel-oil" },
       { label: "Aviation (Jet) Fuel", href: "#jet-fuel" },
