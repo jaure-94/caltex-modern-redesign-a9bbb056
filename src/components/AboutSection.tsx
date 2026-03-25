@@ -9,9 +9,9 @@ import familyStation from "@/assets/family-station.jpg";
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { value: 800, suffix: "+", label: "Stations Nationwide" },
-  { value: 90, suffix: "yrs", label: "Years of Trust" },
-  { value: 10, suffix: "+", label: "Satisfied Motorists" },
+  // { value: 800, suffix: "+", label: "Stations Nationwide" },
+  // { value: 90, suffix: "yrs", label: "Years of Trust" },
+  // { value: 10, suffix: "+", label: "Satisfied Motorists" },
 ];
 
 const AboutSection = () => {
@@ -112,9 +112,10 @@ const AboutSection = () => {
             <div className="space-y-4 mb-10">
               {[
                 "Techron® Clean Engine Technology in every grade",
-                "800+ stations across South Africa",
+                "Many new sites coming up all over South Africa",
                 "FreshStop convenience stores open 24/7",
                 "Tap & Go contactless payment nationwide",
+                "90 years of fueling SA, with a new refreshed Caltex 2.0 experience",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3">
                   <CheckCircle2 size={20} className="text-primary flex-shrink-0 mt-0.5" />
@@ -123,16 +124,8 @@ const AboutSection = () => {
               ))}
             </div>
 
-            {/* Animated Stats */}
-            <div className="about-stats flex gap-8 mb-10 pb-10 border-b border-border">
-              {stats.map((stat, i) => (
-                <div key={stat.label}>
-                  <div className="text-4xl font-display font-bold text-primary tracking-tight">
-                    {counters[i]}{stat.suffix}
-                  </div>
-                  <div className="text-sm text-muted-foreground mt-1.5 font-medium">{stat.label}</div>
-                </div>
-              ))}
+            {/* Divider Line */}
+            <div className="about-stats flex gap-8 mb-10 border-b border-border">
             </div>
 
             <Button variant="hero" size="lg">
