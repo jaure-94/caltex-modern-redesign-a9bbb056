@@ -57,7 +57,7 @@ const TechronSection = () => {
           <span className="section-label mb-6 inline-block">Techron® Technology</span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-foreground mb-5 leading-tight">
             Our Best Petrol Ever.{" "}
-            <span className="text-gradient-red">Now with Clean & Glide™</span>
+            <span className="text-caltex-red">Now with Clean & Glide™</span>
           </h2>
           <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
             From research to the real world, Techron® is a cleaning additive in all grades of Caltex fuel — trusted by motorists, mechanics, and manufacturers around the world.

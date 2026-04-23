@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import stationAerial from "@/assets/sa-highway.jpg";
 import familyStation from "@/assets/family-station.jpg";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -102,7 +103,7 @@ const AboutSection = () => {
             <span className="section-label mb-5 inline-block">Why Choose Caltex</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
               Trusted by Millions of{" "}
-              <span className="text-gradient-red">South African Motorists</span>
+              <span className="text-caltex-red">South African Motorists</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
               For over 87 years, Caltex has been powering South Africa's journeys. Our commitment to quality fuel, clean stations, and innovative technology makes us the choice of discerning motorists nationwide.
@@ -128,11 +129,13 @@ const AboutSection = () => {
             <div className="about-stats flex gap-8 mb-10 border-b border-border">
             </div>
 
-            <Button variant="hero" size="lg">
-              <a href="/about" className="flex flex-row items-center gap-2">
-                Learn More About Us <ArrowRight size={18} />
-              </a>
-            </Button>
+            <Link to="/about">
+              <Button variant="hero" size="lg">
+                <a href="/about" className="flex flex-row items-center gap-2">
+                  Learn More About Us <ArrowRight size={18} />
+                </a>
+              </Button>
+            </Link>  
           </div>
         </div>
       </div>

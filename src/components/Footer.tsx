@@ -28,7 +28,7 @@ const Footer = () => {
   return (
     <footer ref={footerRef} id="contact" className="bg-caltex-dark text-primary-foreground relative overflow-hidden">
       {/* Top Contact Bar */}
-      <div className="bg-red-gradient">
+      <div className="bg-caltex-red">
         <div className="section-padding section-max py-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3 text-primary-foreground/90">

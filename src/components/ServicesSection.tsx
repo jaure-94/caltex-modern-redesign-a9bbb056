@@ -84,7 +84,7 @@ const ServicesSection = () => {
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground leading-tight">
               Everything for Your
               <br />
-              <span className="text-gradient-red">Journey Ahead</span>
+              <span className="text-caltex-red">Journey Ahead</span>
             </h2>
           </div>
           <p className="text-muted-foreground text-lg leading-relaxed max-w-md lg:text-right">

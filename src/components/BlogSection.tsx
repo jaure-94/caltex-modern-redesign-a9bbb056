@@ -42,7 +42,7 @@ const BlogSection = () => {
           <div>
             <span className="section-label mb-5 inline-block">Insights Blog</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground leading-tight">
-              From the <span className="text-gradient-red">Blog</span>
+              From the <span className="text-caltex-red">Blog</span>
             </h2>
           </div>
            <Link to="/blog" className="group inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all duration-300">

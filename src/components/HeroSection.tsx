@@ -162,11 +162,11 @@ const HeroSection = () => {
           </div>
 
           {/* Heading */}
-          <h1 ref={headingRef} className="opacity-0 font-display text-[3.2rem] sm:text-6xl md:text-7xl lg:text-[5.2rem] font-bold text-primary-foreground leading-[1.05] mb-7 text-balance">
+          <h1 ref={headingRef} className="opacity-0 font-display text-[3rem] sm:text-6xl md:text-7xl lg:text-[5.2rem] font-bold text-primary-foreground leading-[1.05] mb-7 text-balance">
             Quality Fuel for
             <br />
             Every{" "}
-            <span ref={rotatingWordRef} className="text-gradient-red inline-block">
+            <span ref={rotatingWordRef} className="text-caltex-red inline-block">
               {heroWords[currentWord]}
             </span>
           </h1>

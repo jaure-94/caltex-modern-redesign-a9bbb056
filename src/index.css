@@ -1,8 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Adieu-Regular — licensed font file */
+@font-face {
+  font-family: 'Adieu Regular';
+  src: url('/fonts/Adieu-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Adieu Regular';
+  src: url('/fonts/Adieu-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Adieu Regular';
+  src: url('/fonts/Adieu-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* AvenirNext LT Pro — licensed font files */
+@font-face {
+  font-family: 'AvenirNext LT Pro';
+  src: url('/fonts/AvenirLTProBook.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 @layer base {
   :root {
@@ -15,16 +51,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 8%;
 
-    --primary: 356 82% 46%;
+    --primary: 352 79% 54%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 55% 10%;
+    --secondary: 199 63% 26%;
     --secondary-foreground: 210 20% 95%;
 
     --muted: 215 20% 96%;
     --muted-foreground: 215 15% 50%;
 
-    --accent: 356 82% 46%;
+    --accent: 352 79% 54%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -32,16 +68,16 @@
 
     --border: 215 20% 92%;
     --input: 215 20% 92%;
-    --ring: 356 82% 46%;
+    --ring: 352 79% 54%;
 
     --radius: 0.75rem;
 
     /* Caltex Brand Palette */
-    --caltex-red: 356 82% 46%;
-    --caltex-red-light: 356 78% 58%;
-    --caltex-red-dark: 356 85% 38%;
-    --caltex-navy: 215 55% 10%;
-    --caltex-navy-light: 215 40% 18%;
+    --caltex-red: 352 79% 54%;
+    --caltex-red-light: 352 80% 64%;
+    --caltex-red-dark: 352 80% 44%;
+    --caltex-navy: 199 63% 26%;
+    --caltex-navy-light: 199 50% 36%;
     --caltex-dark: 215 30% 6%;
     --caltex-charcoal: 215 20% 14%;
     --caltex-gray: 215 12% 50%;
@@ -70,8 +106,9 @@
     --shadow-red-lg: 0 16px 40px -8px hsl(356 82% 46% / 0.45);
 
     /* Typography */
-    --font-display: 'Space Grotesk', system-ui, sans-serif;
-    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-display: 'Adieu Regular', 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'AvenirNext LT Pro', 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-adieu: 'Adieu', 'Syne', 'Space Grotesk', system-ui, sans-serif;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;

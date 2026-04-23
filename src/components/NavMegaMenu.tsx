@@ -21,16 +21,7 @@ interface NavMegaMenuProps {
 
 const motoristMenu: MenuCategory[] = [
   {
-    title: "Industries",
-    links: [
-      { label: "Agriculture", href: "#motorists-agriculture" },
-      { label: "Construction", href: "#motorists-construction" },
-      { label: "Mining", href: "#motorists-mining" },
-      { label: "Power", href: "#motorists-power" },
-    ],
-  },
-  {
-    title: "Products",
+    title: "Products & Services",
     links: [
       { label: "Techron Technology", href: "/motorists/products/techron-technology" },
       { label: "Lubricants", href: "/motorists/products/lubricants" },
@@ -39,7 +30,7 @@ const motoristMenu: MenuCategory[] = [
   {
     title: "Franchise",
     links: [
-      { label: "Own Your Own Station", href: "#franchise" },
+      { label: "Own Your Own Station", href: "/motorists/own-a-station" },
     ],
   },
 ];
@@ -48,10 +39,10 @@ const businessMenu: MenuCategory[] = [
   {
     title: "Industries",
     links: [
-      { label: "Agriculture", href: "#business-agriculture" },
-      { label: "Construction", href: "#business-construction" },
-      { label: "Mining", href: "#business-mining" },
-      { label: "Power", href: "#business-power" },
+      { label: "Agriculture", href: "/business/industries/agriculture" },
+      { label: "Construction", href: "/business/industries/construction" },
+      { label: "Mining", href: "/business/industries/mining" },
+      { label: "Power", href: "/business/industries/power" },
     ],
   },
   {
@@ -76,8 +67,8 @@ const NavMegaMenu = ({ categories, isOpen, isScrolled }: NavMegaMenuProps) => {
       gsap.set(menuRef.current, { display: "block", pointerEvents: "auto" });
       gsap.fromTo(
         menuRef.current,
-        { opacity: 0, y: -8, scale: 0.98 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "power3.out" }
+        { opacity: 0, y: -8 },
+        { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }
       );
       const items = menuRef.current.querySelectorAll(".mega-link");
       gsap.fromTo(
@@ -101,55 +92,41 @@ const NavMegaMenu = ({ categories, isOpen, isScrolled }: NavMegaMenuProps) => {
   return (
     <div
       ref={menuRef}
-      className="absolute top-full left-1/2 -translate-x-1/2 pt-3"
+      className={`fixed left-0 right-0 w-screen ${isScrolled ? "top-[68px]" : "top-[84px]"}`}
       style={{ display: "none" }}
     >
-      <div
-        className={`rounded-2xl border shadow-2xl backdrop-blur-xl min-w-[420px] overflow-hidden ${
-          isScrolled
-            ? "bg-background border-border"
-            : "bg-secondary/95 border-white/10"
-        }`}
-      >
+      <div className="w-full bg-background border-t border-b border-border shadow-xl">
         {/* Top accent stripe */}
         <div className="h-[3px] bg-gradient-to-r from-primary via-primary/70 to-transparent" />
 
-        <div className="p-5 flex gap-6">
-          {categories.map((category) => (
-            <div key={category.title} className="min-w-[140px]">
-              <h4
-                className={`text-[11px] font-bold uppercase tracking-[0.15em] mb-3 ${
-                  isScrolled ? "text-primary" : "text-primary"
-                }`}
-              >
-                {category.title}
-              </h4>
-              <ul className="space-y-0.5">
-                {category.links.map((link) => {
-                  const isRoute = link.href.startsWith("/");
-                  const Comp = isRoute ? Link : "a";
-                  const linkProps = isRoute ? { to: link.href } : { href: link.href };
-                  return (
-                    <li key={link.label}>
-                      <Comp
-                        {...(linkProps as any)}
-                        className={`mega-link group flex items-center gap-2 px-2.5 py-2 rounded-lg text-[13px] font-medium transition-all duration-200 ${
-                          isScrolled
-                            ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
-                            : "text-secondary-foreground/70 hover:text-primary-foreground hover:bg-white/10"
-                        }`}
-                      >
-                        <ChevronRight
-                          className="w-3 h-3 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200 text-primary"
-                        />
-                        {link.label}
-                      </Comp>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          ))}
+        <div className="section-padding section-max py-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+            {categories.map((category) => (
+              <div key={category.title}>
+                <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] mb-4 text-primary">
+                  {category.title}
+                </h4>
+                <ul className="space-y-1">
+                  {category.links.map((link) => {
+                    const isRoute = link.href.startsWith("/");
+                    const Comp = isRoute ? Link : "a";
+                    const linkProps = isRoute ? { to: link.href } : { href: link.href };
+                    return (
+                      <li key={link.label}>
+                        <Comp
+                          {...(linkProps as any)}
+                          className="mega-link group flex items-center gap-2 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-200"
+                        >
+                          <ChevronRight className="w-3.5 h-3.5 opacity-0 -ml-3 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200 text-primary" />
+                          {link.label}
+                        </Comp>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -158,3 +135,4 @@ const NavMegaMenu = ({ categories, isOpen, isScrolled }: NavMegaMenuProps) => {
 
 export { NavMegaMenu, motoristMenu, businessMenu };
 export type { MenuCategory };
+
