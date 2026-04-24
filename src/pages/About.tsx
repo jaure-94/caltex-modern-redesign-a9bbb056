@@ -193,7 +193,7 @@ const About = () => {
               <span className="section-label mb-5 inline-block opacity-0">Our Mission</span>
               <h2 className="opacity-0 font-display text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
                 Renewing Your Drive,{" "}
-                <span className="text-gradient-red">Every Day</span>
+                <span className="text-caltex-red">Every Day</span>
               </h2>
               <p className="opacity-0 text-muted-foreground text-lg leading-relaxed mb-6">
                 At Caltex, our journey has only one destination — you. We exist to renew your drive. To do the best we can to help you meet the needs of your journey. To recharge and refuel, not just your vehicle but your being.
@@ -239,7 +239,7 @@ const About = () => {
           {/* Timeline */}
           <div className="relative max-w-4xl mx-auto">
             {/* Center line */}
-            <div className="timeline-line absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/60 via-primary/30 to-transparent origin-top" />
+            <div className="timeline-line absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-caltex-navy from-primary/60 via-primary/30 to-transparent origin-top" />
 
             <div className="space-y-16">
               {timelineEvents.map((event, i) => {
@@ -315,7 +315,7 @@ const About = () => {
             <span className="section-label mb-5 inline-block">Proudly South African</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6 leading-tight">
               5 Things to Know About{" "}
-              <span className="text-gradient-red">Caltex South Africa</span>
+              <span className="text-caltex-red">Caltex South Africa</span>
             </h2>
             <p className="text-primary-foreground/50 text-lg max-w-2xl mx-auto">
               Headquartered in Cape Town, we are proudly South African — powering the nation's journeys with quality, innovation, and community commitment.

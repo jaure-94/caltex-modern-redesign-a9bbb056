@@ -15,8 +15,8 @@
 }
 
 @font-face {
-  font-family: 'Adieu Regular';
-  src: url('/fonts/Adieu-Regular.ttf') format('truetype');
+  font-family: 'Adieu Light';
+  src: url('/fonts/Adieu-Light.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -106,7 +106,7 @@
     --shadow-red-lg: 0 16px 40px -8px hsl(356 82% 46% / 0.45);
 
     /* Typography */
-    --font-display: 'Adieu Regular', 'Space Grotesk', system-ui, sans-serif;
+    --font-display: 'Adieu Light', 'Space Grotesk', system-ui, sans-serif;
     --font-body: 'AvenirNext LT Pro', 'Plus Jakarta Sans', system-ui, sans-serif;
     --font-adieu: 'Adieu', 'Syne', 'Space Grotesk', system-ui, sans-serif;
 
