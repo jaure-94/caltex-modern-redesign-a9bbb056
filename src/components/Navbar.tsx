@@ -4,17 +4,18 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import gsap from "gsap";
 import { useSiteStore } from "@/store/siteStore";
-import caltexLogo from "@/assets/caltex-vantage-logo-no-bg.png";
+import caltexLogo from "@/assets/caltex-logo-white.png";
+import CaltexLogo from "@/components/CaltexLogo";
 import { NavMegaMenu, motoristMenu, businessMenu } from "@/components/NavMegaMenu";
 
 const navItems: { label: string; href: string; isRoute?: boolean; hasMega?: "motorists" | "business" }[] = [
   // { label: "Home", href: "#home" },
-  { label: "About", href: "/about", isRoute: true },
+  { label: "ABOUT", href: "/about", isRoute: true },
   // { label: "Find a Station", href: "/find-a-station", isRoute: true },
-  { label: "Motorists", href: "#motorists", hasMega: "motorists" },
-  { label: "Business", href: "#business", hasMega: "business" },
-  { label: "Contact", href: "/contact", isRoute: true },
-  { label: "Blog", href: "/blog", isRoute: true },
+  { label: "MOTORISTS", href: "#motorists", hasMega: "motorists" },
+  { label: "BUSINESS", href: "#business", hasMega: "business" },
+  { label: "CONTACT", href: "/contact", isRoute: true },
+  { label: "BLOG", href: "/blog", isRoute: true },
 ];
 
 const Navbar = () => {
@@ -122,7 +123,11 @@ const Navbar = () => {
           {/* Logo */}
           <a ref={logoRef} href="#home" onClick={(e) => handleNavClick(e, "#home")} className="flex items-center gap-3 group opacity-0">
             <div className="relative">
-              <img src={caltexLogo} alt="Caltex" className="h-14 transition-transform duration-500 group-hover:scale-110" />
+              <CaltexLogo
+                className={`h-14 w-auto transition-all duration-500 group-hover:scale-110 ${
+                  isNavScrolled ? "text-secondary" : "text-white"
+                }`}
+              />
             </div>
             <span className={`font-display text-xl font-bold tracking-tight transition-colors duration-300 ${
               isNavScrolled ? "text-secondary" : "text-primary-foreground"

@@ -195,9 +195,9 @@ const Contact = () => {
           {/* Left info */}
           <div className="lg:col-span-2 space-y-8">
             <div>
-              <span className="section-label mb-4 inline-block">How Can We Help?</span>
+              <span className="section-label-navy mb-4 inline-block">How Can We Help?</span>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground leading-tight mt-4">
-                Send Us a <span className="text-gradient-red">Message</span>
+                Send Us a <span className="text-caltex-red">Message</span>
               </h2>
               <p className="text-muted-foreground mt-4 text-base leading-relaxed">
                 Fill in the form and our team at Caltex South Africa will get back to you within 24 hours. Whether it's about fleet cards, lubricants, franchising, or just a general enquiry — we're here to help.
@@ -400,7 +400,7 @@ const Contact = () => {
                     )}
                   />
 
-                  <Button type="submit" variant="hero" size="xl" className="w-full sm:w-auto">
+                  <Button type="submit" variant="secondary" size="xl" className="w-full sm:w-auto">
                     <Send className="w-4 h-4" />
                     Submit Enquiry
                   </Button>

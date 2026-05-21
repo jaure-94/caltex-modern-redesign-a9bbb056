@@ -145,7 +145,7 @@ const About = () => {
 
             <h1 className="opacity-0 font-display text-5xl sm:text-6xl md:text-7xl font-bold text-primary-foreground leading-[1.05] mb-7 text-balance">
               One Journey.{" "}
-              <span className="text-gradient-red">Almost 90 Years</span>{" "}
+              <span className="text-caltex-red">Almost 90 Years</span>{" "}
               in the Making.
             </h1>
 
@@ -190,7 +190,7 @@ const About = () => {
 
             {/* Content */}
             <div className="mission-content">
-              <span className="section-label mb-5 inline-block opacity-0">Our Mission</span>
+              <span className="section-label-navy mb-5 inline-block opacity-0">Our Mission</span>
               <h2 className="opacity-0 font-display text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
                 Renewing Your Drive,{" "}
                 <span className="text-caltex-red">Every Day</span>
@@ -229,7 +229,7 @@ const About = () => {
             <span className="section-label mb-5 inline-block">Our History</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-6 leading-tight">
               Milestones That{" "}
-              <span className="text-gradient-red">Define Us</span>
+              <span className="text-caltex-red">Define Us</span>
             </h2>
             <p className="text-primary-foreground/50 text-lg max-w-2xl mx-auto">
               From our founding in 1936 to serving millions today, every milestone reflects our unwavering commitment to South African motorists.
@@ -277,10 +277,10 @@ const About = () => {
       <section ref={valuesRef} className="values-section py-28 md:py-36 bg-background relative overflow-hidden">
         <div className="section-padding section-max">
           <div className="text-center mb-16">
-            <span className="section-label mb-5 inline-block">What Drives Us</span>
+            <span className="section-label-navy mb-5 inline-block">What Drives Us</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
               Our Core{" "}
-              <span className="text-gradient-red">Values</span>
+              <span className="text-caltex-red">Values</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               These principles guide everything we do — from how we develop our fuel technology to how we serve you at every station.
@@ -383,10 +383,10 @@ const About = () => {
         <div className="section-padding section-max">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <div className="about-cta">
-              <span className="section-label mb-5 inline-block opacity-0">More Than Fuel</span>
+              <span className="section-label-navy mb-5 inline-block opacity-0">More Than Fuel</span>
               <h2 className="opacity-0 font-display text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
                 FreshStop Convenience,{" "}
-                <span className="text-gradient-red">Wherever You Go</span>
+                <span className="text-caltex-red">Wherever You Go</span>
               </h2>
               <p className="opacity-0 text-muted-foreground text-lg leading-relaxed mb-6">
                 Our FreshStop convenience stores offer everything you need on the go — from fresh coffee and snacks to essential groceries. Open 24/7 at locations nationwide, because your journey shouldn't stop for anything.
@@ -396,7 +396,7 @@ const About = () => {
               </p>
               <div className="opacity-0">
                 <Link to="/find-a-station">
-                  <Button variant="hero" size="lg">
+                  <Button variant="secondary" size="lg">
                     Find Your Nearest Station <ArrowRight size={18} />
                   </Button>
                 </Link>

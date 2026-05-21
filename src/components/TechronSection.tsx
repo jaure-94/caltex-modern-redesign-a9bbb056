@@ -54,7 +54,7 @@ const TechronSection = () => {
       <div className="section-padding section-max relative">
         {/* Section Header */}
         <div className="techron-heading text-center max-w-3xl mx-auto mb-20">
-          <span className="section-label mb-6 inline-block">Techron® Technology</span>
+          <span className="section-label-navy mb-6 inline-block">Techron® Technology</span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-foreground mb-5 leading-tight">
             Our Best Petrol Ever.{" "}
             <span className="text-caltex-red">Now with Clean & Glide™</span>
@@ -71,7 +71,7 @@ const TechronSection = () => {
             <img src={techronFuel} alt="Techron Fuel" className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-110" />
             <div className="absolute inset-0 bg-gradient-to-t from-caltex-dark via-caltex-dark/40 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
-              <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase mb-3 block">Petrol</span>
+              <span className="section-label-navy mb-3 inline-block">Petrol</span>
               <h3 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-3">
                 Caltex with Techron®
               </h3>
@@ -99,7 +99,7 @@ const TechronSection = () => {
                 Good diesel just got better. Advanced formula delivers improved fuel economy, engine protection, and reduced emissions for commercial and personal vehicles.
               </p>
               <a href="/business/products/diesel" className="flex flex-row items-center gap-2">
-                <Button variant="hero" size="sm">
+                <Button variant="secondary" size="sm">
                     Explore Diesel <ArrowRight size={14} />
                 </Button>
               </a>

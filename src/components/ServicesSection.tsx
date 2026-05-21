@@ -22,7 +22,7 @@ const services = [
     icon: Store,
     title: "FreshStop",
     description: "Get refreshed anytime. Quality food, beverages, and convenience — open 24/7 at Caltex stations.",
-    color: "caltex-emerald",
+    color: "caltex-navy",
   },
   {
     icon: CreditCard,
@@ -40,7 +40,7 @@ const services = [
     icon: Wrench,
     title: "Vehicle Services",
     description: "Expert vehicle maintenance and services to keep your car running safely and reliably on the road.",
-    color: "caltex-emerald",
+    color: "caltex-navy",
   },
 ];
 
@@ -80,7 +80,7 @@ const ServicesSection = () => {
         {/* Header */}
         <div className="services-heading flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
           <div className="max-w-2xl">
-            <span className="section-label mb-5 inline-block">Our Services</span>
+            <span className="section-label-navy mb-5 inline-block">Our Services</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground leading-tight">
               Everything for Your
               <br />

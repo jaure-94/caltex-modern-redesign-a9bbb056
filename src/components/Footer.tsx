@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin, ArrowUpRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import caltexLogo from "@/assets/caltex-vantage-logo-no-bg.png";
+import caltexLogo from "@/assets/caltex-logo-white.png";
 
 gsap.registerPlugin(ScrollTrigger);
 

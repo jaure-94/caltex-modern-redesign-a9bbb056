@@ -100,7 +100,7 @@ const AboutSection = () => {
 
           {/* Right - Content */}
           <div className="about-content">
-            <span className="section-label mb-5 inline-block">Why Choose Caltex</span>
+            <span className="section-label-navy mb-5 inline-block">Why Choose Caltex</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
               Trusted by Millions of{" "}
               <span className="text-caltex-red">South African Motorists</span>
@@ -130,7 +130,7 @@ const AboutSection = () => {
             </div>
 
             <Link to="/about">
-              <Button variant="hero" size="lg">
+              <Button variant="secondary" size="lg">
                 <a href="/about" className="flex flex-row items-center gap-2">
                   Learn More About Us <ArrowRight size={18} />
                 </a>

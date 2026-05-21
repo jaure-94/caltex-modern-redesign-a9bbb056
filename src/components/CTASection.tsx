@@ -41,7 +41,7 @@ const CTASection = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left - Content */}
           <div className="cta-content">
-            <span className="section-label mb-5 inline-block">Business Opportunities</span>
+            <span className="section-label-navy mb-5 inline-block">Business Opportunities</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
               A Caltex Franchise{" "}
               <span className="text-caltex-red">Awaits You</span>
@@ -76,7 +76,7 @@ const CTASection = () => {
               <Button variant="hero" size="lg">
                 Explore Franchise <Building2 size={18} />
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="secondary" size="lg">
                 Learn More <ArrowRight size={18} />
               </Button>
             </div>
@@ -92,7 +92,7 @@ const CTASection = () => {
             </div>
             {/* Floating stat */}
             <div className="absolute -left-4 top-1/2 -translate-y-1/2 bg-card rounded-2xl p-5 shadow-lg border border-border/50 hidden md:block">
-              <div className="text-3xl font-display font-bold text-primary">Guaranteed</div>
+              <div className="text-3xl font-display font-bold text-secondary">Guaranteed</div>
               <div className="text-xs text-muted-foreground mt-1">Franchisee<br />Satisfaction</div>
             </div>
           </div>

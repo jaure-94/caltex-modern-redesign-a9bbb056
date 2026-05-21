@@ -97,13 +97,13 @@ const NavMegaMenu = ({ categories, isOpen, isScrolled }: NavMegaMenuProps) => {
     >
       <div className="w-full bg-background border-t border-b border-border shadow-xl">
         {/* Top accent stripe */}
-        <div className="h-[3px] bg-gradient-to-r from-primary via-primary/70 to-transparent" />
+        {/* <div className="h-[3px] bg-gradient-to-r from-primary via-primary/70 to-transparent" /> */}
 
         <div className="section-padding section-max py-10">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
             {categories.map((category) => (
               <div key={category.title}>
-                <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] mb-4 text-primary">
+                <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] mb-4 text-secondary">
                   {category.title}
                 </h4>
                 <ul className="space-y-1">

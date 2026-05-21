@@ -184,7 +184,7 @@ const HeroSection = () => {
               </Button>
             </a>
             <a href="/motorists/products/techron-technology" className="flex flex-row items-center gap-2">
-              <Button variant="heroOutline" size="xl">
+              <Button variant="secondary" size="xl">
                   Explore Techron® <ArrowRight size={18} />
               </Button>
             </a>

@@ -40,7 +40,7 @@ const BlogSection = () => {
         {/* Header */}
         <div className="blog-heading flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div>
-            <span className="section-label mb-5 inline-block">Insights Blog</span>
+            <span className="section-label-navy mb-5 inline-block">Insights Blog</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground leading-tight">
               From the <span className="text-caltex-red">Blog</span>
             </h2>
