@@ -116,7 +116,7 @@ const HeroSection = () => {
   }, [setIsPageLoaded]);
 
   return (
-    <section ref={sectionRef} id="home" className="relative min-h-screen flex items-center overflow-hidden bg-caltex-dark">
+    <section ref={sectionRef} id="home" className="relative min-h-screen flex items-center overflow-hidden bg-caltex-navy">
       {/* Background Video */}
       <div ref={imageRef} className="absolute inset-[-20px]">
         <video
@@ -139,8 +139,8 @@ const HeroSection = () => {
 
       {/* Overlays */}
       <div ref={overlayRef} className="absolute inset-0 opacity-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-caltex-dark/95 via-caltex-dark/75 to-caltex-dark/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-caltex-dark/80 via-transparent to-caltex-dark/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-caltex-navy/60 via-caltex-navy/45 to-caltex-navy/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-caltex-navy/80 via-transparent to-caltex-navy/30" />
       </div>
 
       {/* Decorative elements */}
