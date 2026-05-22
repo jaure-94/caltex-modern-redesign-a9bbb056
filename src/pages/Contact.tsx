@@ -147,7 +147,7 @@ const Contact = () => {
       <section ref={heroRef} className="relative min-h-[50vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroNight} alt="Caltex station" className="contact-hero-image w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary/45 via-secondary/30 to-secondary/20" />
           <div className="absolute inset-0 dot-pattern opacity-20" />
         </div>
 

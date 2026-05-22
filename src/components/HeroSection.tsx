@@ -139,8 +139,8 @@ const HeroSection = () => {
 
       {/* Overlays */}
       <div ref={overlayRef} className="absolute inset-0 opacity-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-caltex-navy/60 via-caltex-navy/45 to-caltex-navy/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-caltex-navy/80 via-transparent to-caltex-navy/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-caltex-navy/45 via-caltex-navy/30 to-caltex-navy/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-caltex-navy/50 via-transparent to-caltex-navy/15" />
       </div>
 
       {/* Decorative elements */}

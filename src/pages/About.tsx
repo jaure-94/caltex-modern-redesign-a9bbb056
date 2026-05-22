@@ -123,12 +123,12 @@ const About = () => {
     <div className="min-h-screen bg-background overflow-x-hidden">
 
       {/* Hero */}
-      <section ref={heroRef} className="relative min-h-[85vh] flex items-center overflow-hidden bg-caltex-dark">
+      <section ref={heroRef} className="relative min-h-[85vh] flex items-center overflow-hidden bg-caltex-navy">
         <div className="about-hero-image absolute inset-[-20px] opacity-0">
           <img src={heroNight} alt="Caltex Station" className="w-full h-full object-cover" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-caltex-dark/95 via-caltex-dark/80 to-caltex-dark/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-caltex-dark/70 via-transparent to-caltex-dark/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-caltex-navy/45 via-caltex-navy/30 to-caltex-navy/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-caltex-navy/40 via-transparent to-caltex-navy/10" />
 
         <div className="relative z-10 section-padding w-full pt-40 pb-24">
           <div className="about-hero-content max-w-3xl">
