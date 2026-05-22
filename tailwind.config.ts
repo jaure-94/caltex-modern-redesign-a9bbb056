@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
@@ -14,7 +15,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Adieu Light", "Space Grotesk", "system-ui", "sans-serif"],
+        display: ["ITC Franklin Gothic LT Demi Condensed", "Roboto", "system-ui", "sans-serif"],
         body: ["AvenirNext LT Pro", "Plus Jakarta Sans", "system-ui", "sans-serif"],
       },
       colors: {
@@ -115,5 +116,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 } satisfies Config;

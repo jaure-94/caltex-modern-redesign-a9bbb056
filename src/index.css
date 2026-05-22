@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -10,6 +11,14 @@
   font-family: 'Adieu Regular';
   src: url('/fonts/Adieu-Regular.ttf') format('truetype');
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ITC Franklin Gothic LT Demi Condensed";
+  src: url("/fonts/ITC-Franklin-Gothic-Demi-Condensed.otf") format("opentype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -106,7 +115,7 @@
     --shadow-red-lg: 0 16px 40px -8px hsl(356 82% 46% / 0.45);
 
     /* Typography */
-    --font-display: 'Adieu Light', 'Space Grotesk', system-ui, sans-serif;
+    --font-display: 'ITC Franklin Gothic LT Demi Condensed', 'Roboto', system-ui, sans-serif;
     --font-body: 'AvenirNext LT Pro', 'Plus Jakarta Sans', system-ui, sans-serif;
     --font-adieu: 'Adieu', 'Syne', 'Space Grotesk', system-ui, sans-serif;
 
