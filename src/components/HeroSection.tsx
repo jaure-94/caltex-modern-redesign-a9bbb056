@@ -128,7 +128,7 @@ const HeroSection = () => {
           className="w-full h-full object-cover scale-105"
           poster=""
         >
-          <source src="/videos/hero-bg.mp4" type="video/mp4" />
+          <source src="/videos/caltex-video.mp4" type="video/mp4" />
         </video>
       </div>
       
@@ -145,9 +145,9 @@ const HeroSection = () => {
 
       {/* Decorative elements */}
       <div ref={decorRef} className="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-0 pointer-events-none">
-        <div className="absolute inset-0 rounded-full border border-primary/10 animate-pulse-soft" />
+        {/* <div className="absolute inset-0 rounded-full border border-primary/10 animate-pulse-soft" />
         <div className="absolute inset-8 rounded-full border border-primary/8" />
-        <div className="absolute inset-16 rounded-full border border-primary/5" />
+        <div className="absolute inset-16 rounded-full border border-primary/5" /> */}
       </div>
 
       {/* Content */}

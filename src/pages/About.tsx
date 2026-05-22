@@ -220,9 +220,9 @@ const About = () => {
       </section>
 
       {/* Timeline */}
-      <section ref={timelineRef} className="timeline-section py-28 md:py-36 bg-caltex-dark relative overflow-hidden">
+      <section ref={timelineRef} className="timeline-section py-28 md:py-36 bg-caltex-navy relative overflow-hidden">
         {/* Decorative */}
-        <div className="absolute inset-0 bg-gradient-to-b from-caltex-dark via-caltex-navy/30 to-caltex-dark" />
+        <div className="absolute inset-0 bg-gradient-to-b from-caltex-navy via-caltex-navy/30 to-caltex-navy" />
 
         <div className="relative z-10 section-padding section-max">
           <div className="text-center mb-20">
@@ -305,10 +305,10 @@ const About = () => {
       </section>
 
       {/* 5 Things to Know - South Africa Focus */}
-      <section className="py-28 md:py-36 bg-caltex-dark relative overflow-hidden">
+      <section className="py-28 md:py-36 bg-caltex-navy relative overflow-hidden">
         {/* SA flag-inspired accent stripe */}
         <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[hsl(145,60%,35%)] via-[hsl(48,95%,55%)] to-[hsl(0,82%,48%)]" />
-        <div className="absolute inset-0 bg-gradient-to-br from-caltex-dark via-caltex-navy/40 to-caltex-dark" />
+        <div className="absolute inset-0 bg-gradient-to-br from-caltex-navy via-caltex-navy/40 to-caltex-navy" />
 
         <div className="relative z-10 section-padding section-max">
           <div className="text-center mb-16">

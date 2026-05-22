@@ -26,7 +26,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer ref={footerRef} id="contact" className="bg-caltex-dark text-primary-foreground relative overflow-hidden">
+    <footer ref={footerRef} id="contact" className="bg-caltex-navy text-primary-foreground relative overflow-hidden">
       {/* Top Contact Bar */}
       <div className="bg-caltex-red">
         <div className="section-padding section-max py-5">

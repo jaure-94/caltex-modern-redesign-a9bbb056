@@ -48,7 +48,7 @@ const FuelPriceSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="find-station" className="py-28 md:py-36 bg-dark-radial relative overflow-hidden">
+    <section ref={sectionRef} id="find-station" className="py-28 md:py-36 bg-caltex-navy relative overflow-hidden">
       {/* Decorative */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/[0.03] rounded-full blur-[120px]" />
 
