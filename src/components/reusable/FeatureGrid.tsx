@@ -59,7 +59,7 @@ const FeatureGrid = ({
   const bgClasses = {
     default: "bg-background",
     muted: "bg-muted/40",
-    dark: "bg-caltex-dark",
+    dark: "bg-caltex-navy",
   }[variant];
 
   const colClasses = {
